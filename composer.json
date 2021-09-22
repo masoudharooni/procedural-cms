@@ -1,0 +1,21 @@
+{
+    "name": "masoudharooni/procedural-cms",
+    "description": "this is a procedural cms",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Masoudharooni\\ProceduralCms\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "masoud harooni",
+            "email": "masoudharooni50@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "hekmatinasser/verta": "^1.12"
+    }
+}
