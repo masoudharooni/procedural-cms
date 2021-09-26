@@ -211,7 +211,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					<div class="col-md-6 product-grid wow fadeInLeft animated" data-wow-delay=".5s">
 						<div class="product-right">
-							<img src="assets/img/p1.jpg" class="img-responsive" alt="" />
+							<img src="assets/img/p1.jpg" class= "img-responsive" alt="" />
 						</div>
 						<div class="product-left">
 							<h4>
