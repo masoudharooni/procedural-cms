@@ -1,8 +1,8 @@
 <?php
 session_start();
 include 'constants.php';
-include ROOT_PATH . 'bootstrap/config.php';
 include ROOT_PATH . 'libs/helpers.php';
+include ROOT_PATH . 'bootstrap/config.php';
 
 $conn = new mysqli($config->host, $config->username, $config->password, $config->db);
 if ($conn->connect_errno) {
@@ -10,3 +10,4 @@ if ($conn->connect_errno) {
 }
 // connection is true
 include ROOT_PATH . 'libs/lib-auth.php';
+include ROOT_PATH . 'libs/lib-menu.php';

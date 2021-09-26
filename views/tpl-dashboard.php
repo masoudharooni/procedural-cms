@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mosaddek">
     <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
-    <link rel="shortcut icon" href="img/favicon.html">
+    <link rel="shortcut icon" href="assets/img/favicon.html">
 
     <title>پنل ادمین</title>
 
@@ -134,7 +134,7 @@
                             </li>
                             <li>
                                 <a href="#">
-                                    <span class="photo"><img alt="avatar" src="img/avatar-mini.jpg"></span>
+                                    <span class="photo"><img alt="avatar" src="assets/img/avatar-mini.jpg"></span>
                                     <span class="subject">
                                         <span class="from">سجاد باقرزاده</span>
                                         <span class="time">همین حالا</span>
@@ -146,7 +146,7 @@
                             </li>
                             <li>
                                 <a href="#">
-                                    <span class="photo"><img alt="avatar" src="img/avatar-mini2.jpg"></span>
+                                    <span class="photo"><img alt="avatar" src="assets/img/avatar-mini2.jpg"></span>
                                     <span class="subject">
                                         <span class="from">ایمان مدائنی</span>
                                         <span class="time">10 دقیقه قبل</span>
@@ -158,7 +158,7 @@
                             </li>
                             <li>
                                 <a href="#">
-                                    <span class="photo"><img alt="avatar" src="img/avatar-mini3.jpg"></span>
+                                    <span class="photo"><img alt="avatar" src="assets/img/avatar-mini3.jpg"></span>
                                     <span class="subject">
                                         <span class="from">صبا ذاکر</span>
                                         <span class="time">3 ساعت قبل</span>
@@ -170,7 +170,7 @@
                             </li>
                             <li>
                                 <a href="#">
-                                    <span class="photo"><img alt="avatar" src="img/avatar-mini4.jpg"></span>
+                                    <span class="photo"><img alt="avatar" src="assets/img/avatar-mini4.jpg"></span>
                                     <span class="subject">
                                         <span class="from">مسعود شریفی</span>
                                         <span class="time">همین حالا</span>
@@ -251,8 +251,8 @@
                     <!-- user login dropdown start-->
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <img alt="" src="img/avatar1_small.jpg">
-                            <span class="username">سجاد باقرزاده</span>
+                            <img alt="" src="assets/img/avatar1_small.jpg">
+                            <span class="username"><?= $_SESSION['admin_login']['firstname'] . ' ' . $_SESSION['admin_login']['lastname'] ?></span>
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu extended logout">
@@ -260,7 +260,7 @@
                             <li><a href="#"><i class=" icon-suitcase"></i>پروفایل</a></li>
                             <li><a href="#"><i class="icon-cog"></i> تنظیمات</a></li>
                             <li><a href="#"><i class="icon-bell-alt"></i> اعلام ها</a></li>
-                            <li><a href="login.html"><i class="icon-key"></i> خروج</a></li>
+                            <li><a onclick="return confirm('آیا از خــــروج خــــــود اطمینان دارید؟');" href="?logout=1"><i class="icon-key"></i> خروج</a></li>
                         </ul>
                     </li>
                     <!-- user login dropdown end -->
@@ -283,75 +283,20 @@
                     <li class="sub-menu">
                         <a href="javascript:;" class="">
                             <i class="icon-book"></i>
-                            <span>عناصر صفحه</span>
+                            <span>مدیریت منو ها</span>
                             <span class="arrow"></span>
                         </a>
                         <ul class="sub">
-                            <li><a class="" href="general.html">عمومی</a></li>
-                            <li><a class="" href="buttons.html">دکمه ها</a></li>
+                            <li><a class="" href="?p=add-menu">افزودن منوی جدید</a></li>
+                            <li><a class="" href="?p=list-menu">لیست منو ها</a></li>
                             <li><a class="" href="widget.html">ویجت ها</a></li>
                             <li><a class="" href="slider.html">اسلایدر ها</a></li>
                             <li><a class="" href="font_awesome.html">فونت های شکل دار</a></li>
                         </ul>
                     </li>
-                    <li class="sub-menu">
-                        <a href="javascript:;" class="">
-                            <i class="icon-cogs"></i>
-                            <span>کامنت ها</span>
-                            <span class="arrow"></span>
-                        </a>
-                        <ul class="sub">
-                            <li><a class="" href="grids.html">گرید</a></li>
-                            <li><a class="" href="calendar.html">تقویم</a></li>
-                            <li><a class="" href="charts.html">چارت</a></li>
-                        </ul>
-                    </li>
-                    <li class="sub-menu">
-                        <a href="javascript:;" class="">
-                            <i class="icon-tasks"></i>
-                            <span>ابزارهای فرم</span>
-                            <span class="arrow"></span>
-                        </a>
-                        <ul class="sub">
-                            <li><a class="" href="form_component.html">کامنت فرم</a></li>
-                            <li><a class="" href="form_wizard.html">فرم Wizard</a></li>
-                            <li><a class="" href="form_validation.html">ارزیابی فرم</a></li>
-                        </ul>
-                    </li>
-                    <li class="sub-menu">
-                        <a href="javascript:;" class="">
-                            <i class="icon-th"></i>
-                            <span>اطلاعات جدول</span>
-                            <span class="arrow"></span>
-                        </a>
-                        <ul class="sub">
-                            <li><a class="" href="basic_table.html">جدول ساده</a></li>
-                            <li><a class="" href="dynamic_table.html">جدول داینامیک</a></li>
-                        </ul>
-                    </li>
+
                     <li>
-                        <a class="" href="inbox.html">
-                            <i class="icon-envelope"></i>
-                            <span>ایمیل </span>
-                            <span class="label label-danger pull-right mail-info">2</span>
-                        </a>
-                    </li>
-                    <li class="sub-menu">
-                        <a href="javascript:;" class="">
-                            <i class="icon-glass"></i>
-                            <span>عناصر اضافی</span>
-                            <span class="arrow"></span>
-                        </a>
-                        <ul class="sub">
-                            <li><a class="" href="blank.html">صفحه خالی</a></li>
-                            <li><a class="" href="profile.html">پروفایل</a></li>
-                            <li><a class="" href="invoice.html">فاکتور</a></li>
-                            <li><a class="" href="404.html">404 Error</a></li>
-                            <li><a class="" href="500.html">500 Error</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a class="" href="login.html">
+                        <a class="" href="adm-auth.php">
                             <i class="icon-user"></i>
                             <span>صفحه ورود به سایت</span>
                         </a>
@@ -364,664 +309,29 @@
         <!--main content start-->
         <section id="main-content">
             <section class="wrapper">
-                <!--state overview start-->
-                <div class="row state-overview">
-                    <div class="col-lg-3 col-sm-6">
-                        <section class="panel">
-                            <div class="symbol terques">
-                                <i class="icon-user"></i>
-                            </div>
-                            <div class="value">
-                                <h1>22</h1>
-                                <p>کاربر جدید</p>
-                            </div>
-                        </section>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <section class="panel">
-                            <div class="symbol red">
-                                <i class="icon-tags"></i>
-                            </div>
-                            <div class="value">
-                                <h1>140</h1>
-                                <p>فروش</p>
-                            </div>
-                        </section>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <section class="panel">
-                            <div class="symbol yellow">
-                                <i class="icon-shopping-cart"></i>
-                            </div>
-                            <div class="value">
-                                <h1>345</h1>
-                                <p>سفارش جدید</p>
-                            </div>
-                        </section>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <section class="panel">
-                            <div class="symbol blue">
-                                <i class="icon-bar-chart"></i>
-                            </div>
-                            <div class="value">
-                                <h1>34,500</h1>
-                                <p>سود خالص</p>
-                            </div>
-                        </section>
-                    </div>
-                </div>
-                <!--state overview end-->
 
-                <div class="row">
-                    <div class="col-lg-8">
-                        <!--custom chart start-->
-                        <div class="border-head">
-                            <h3>چارت ورودی</h3>
-                        </div>
-                        <div class="custom-bar-chart">
-                            <div class="bar">
-                                <div class="title">فروردین</div>
-                                <div class="value tooltips" data-original-title="80%" data-toggle="tooltip" data-placement="top">80%</div>
-                            </div>
-                            <div class="bar doted">
-                                <div class="title">اردیبهشت</div>
-                                <div class="value tooltips" data-original-title="50%" data-toggle="tooltip" data-placement="top">50%</div>
-                            </div>
-                            <div class="bar ">
-                                <div class="title">خرداد</div>
-                                <div class="value tooltips" data-original-title="40%" data-toggle="tooltip" data-placement="top">40%</div>
-                            </div>
-                            <div class="bar doted">
-                                <div class="title">تیر</div>
-                                <div class="value tooltips" data-original-title="55%" data-toggle="tooltip" data-placement="top">55%</div>
-                            </div>
-                            <div class="bar">
-                                <div class="title">مرداد</div>
-                                <div class="value tooltips" data-original-title="20%" data-toggle="tooltip" data-placement="top">20%</div>
-                            </div>
-                            <div class="bar doted">
-                                <div class="title">شهریور</div>
-                                <div class="value tooltips" data-original-title="39%" data-toggle="tooltip" data-placement="top">39%</div>
-                            </div>
-                            <div class="bar">
-                                <div class="title">مهر</div>
-                                <div class="value tooltips" data-original-title="75%" data-toggle="tooltip" data-placement="top">75%</div>
-                            </div>
-                            <div class="bar doted">
-                                <div class="title">آبان</div>
-                                <div class="value tooltips" data-original-title="45%" data-toggle="tooltip" data-placement="top">45%</div>
-                            </div>
-                            <div class="bar ">
-                                <div class="title">آذر</div>
-                                <div class="value tooltips" data-original-title="50%" data-toggle="tooltip" data-placement="top">50%</div>
-                            </div>
-                            <div class="bar doted">
-                                <div class="title">دی</div>
-                                <div class="value tooltips" data-original-title="42%" data-toggle="tooltip" data-placement="top">42%</div>
-                            </div>
-                            <div class="bar ">
-                                <div class="title">بهمن</div>
-                                <div class="value tooltips" data-original-title="60%" data-toggle="tooltip" data-placement="top">60%</div>
-                            </div>
-                            <div class="bar doted">
-                                <div class="title">اسفند</div>
-                                <div class="value tooltips" data-original-title="90%" data-toggle="tooltip" data-placement="top">90%</div>
-                            </div>
-                        </div>
-                        <!--custom chart end-->
-                    </div>
-                    <div class="col-lg-4">
-                        <!--new earning start-->
-                        <div class="panel terques-chart">
-                            <div class="panel-body chart-texture">
-                                <div class="chart">
-                                    <div class="heading">
-                                        <span>جمعه</span>
-                                        <strong>ريال 570000 | 15%</strong>
-                                    </div>
-                                    <div class="sparkline" data-type="line" data-resize="true" data-height="75" data-width="90%" data-line-width="1" data-line-color="#fff" data-spot-color="#fff" data-fill-color="" data-highlight-line-color="#fff" data-spot-radius="4" data-data="[200,135,667,333,526,996,564,123,890,564,455]"></div>
-                                </div>
-                            </div>
-                            <div class="chart-tittle">
-                                <span class="title">ورودی ها</span>
-                                <span class="value">
-                                    <a href="#" class="active">فروش</a>
-                                    |
-                                    <a href="#">بازگشتی</a>
-                                    |
-                                    <a href="#">آنلاین</a>
-                                </span>
-                            </div>
-                        </div>
-                        <!--new earning end-->
 
-                        <!--total earning start-->
-                        <div class="panel green-chart">
-                            <div class="panel-body">
-                                <div class="chart">
-                                    <div class="heading">
-                                        <span>مهر</span>
-                                        <strong>23 روز | 65%</strong>
-                                    </div>
-                                    <div id="barchart"></div>
-                                </div>
-                            </div>
-                            <div class="chart-tittle">
-                                <span class="title">درآمد کل</span>
-                                <span class="value">ريال, 76،54،678</span>
-                            </div>
-                        </div>
-                        <!--total earning end-->
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4">
-                        <!--user info table start-->
-                        <section class="panel">
-                            <div class="panel-body">
-                                <a href="#" class="task-thumb">
-                                    <img src="img/avatar1.jpg" alt="">
-                                </a>
-                                <div class="task-thumb-details">
-                                    <h1><a href="#">Anjelina Joli</a></h1>
-                                    <p>Senior Architect</p>
-                                </div>
-                            </div>
-                            <table class="table table-hover personal-task">
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <i class=" icon-tasks"></i>
-                                        </td>
-                                        <td>New Task Issued</td>
-                                        <td> 02</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <i class="icon-warning-sign"></i>
-                                        </td>
-                                        <td>Task Pending</td>
-                                        <td> 14</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <i class="icon-envelope"></i>
-                                        </td>
-                                        <td>Inbox</td>
-                                        <td> 45</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <i class=" icon-bell-alt"></i>
-                                        </td>
-                                        <td>New Notification</td>
-                                        <td> 09</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </section>
-                        <!--user info table end-->
-                    </div>
-                    <div class="col-lg-8">
-                        <!--work progress start-->
-                        <section class="panel">
-                            <div class="panel-body progress-panel">
-                                <div class="task-progress">
-                                    <h1>Work Progress</h1>
-                                    <p>Anjelina Joli</p>
-                                </div>
-                                <div class="task-option">
-                                    <select class="styled">
-                                        <option>Anjelina Joli</option>
-                                        <option>Tom Crouse</option>
-                                        <option>Jhon Due</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <table class="table table-hover personal-task">
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>
-                                            Target Sell
-                                        </td>
-                                        <td>
-                                            <span class="badge bg-important">75%</span>
-                                        </td>
-                                        <td>
-                                            <div id="work-progress1"></div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>
-                                            Product Delivery
-                                        </td>
-                                        <td>
-                                            <span class="badge bg-success">43%</span>
-                                        </td>
-                                        <td>
-                                            <div id="work-progress2"></div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>
-                                            Payment Collection
-                                        </td>
-                                        <td>
-                                            <span class="badge bg-info">67%</span>
-                                        </td>
-                                        <td>
-                                            <div id="work-progress3"></div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>4</td>
-                                        <td>
-                                            Work Progress
-                                        </td>
-                                        <td>
-                                            <span class="badge bg-warning">30%</span>
-                                        </td>
-                                        <td>
-                                            <div id="work-progress4"></div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>5</td>
-                                        <td>
-                                            Delivery Pending
-                                        </td>
-                                        <td>
-                                            <span class="badge bg-primary">15%</span>
-                                        </td>
-                                        <td>
-                                            <div id="work-progress5"></div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </section>
-                        <!--work progress end-->
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-8">
-                        <!--timeline start-->
-                        <section class="panel">
-                            <div class="panel-body">
-                                <div class="text-center mbot30">
-                                    <h3 class="timeline-title">Timeline</h3>
-                                    <p class="t-info">This is a project timeline</p>
-                                </div>
 
-                                <div class="timeline">
-                                    <article class="timeline-item">
-                                        <div class="timeline-desk">
-                                            <div class="panel">
-                                                <div class="panel-body">
-                                                    <span class="arrow"></span>
-                                                    <span class="timeline-icon red"></span>
-                                                    <span class="timeline-date">08:25 am</span>
-                                                    <h1 class="red">12 July | Sunday</h1>
-                                                    <p>Lorem ipsum dolor sit amet consiquest dio</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </article>
-                                    <article class="timeline-item alt">
-                                        <div class="timeline-desk">
-                                            <div class="panel">
-                                                <div class="panel-body">
-                                                    <span class="arrow-alt"></span>
-                                                    <span class="timeline-icon green"></span>
-                                                    <span class="timeline-date">10:00 am</span>
-                                                    <h1 class="green">10 July | Wednesday</h1>
-                                                    <p><a href="#">Jonathan Smith</a> added new milestone <span><a href="#" class="green">ERP</a></span></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </article>
-                                    <article class="timeline-item">
-                                        <div class="timeline-desk">
-                                            <div class="panel">
-                                                <div class="panel-body">
-                                                    <span class="arrow"></span>
-                                                    <span class="timeline-icon blue"></span>
-                                                    <span class="timeline-date">11:35 am</span>
-                                                    <h1 class="blue">05 July | Monday</h1>
-                                                    <p><a href="#">Anjelina Joli</a> added new album <span><a href="#" class="blue">PARTY TIME</a></span></p>
-                                                    <div class="album">
-                                                        <a href="#">
-                                                            <img alt="" src="img/sm-img-1.jpg">
-                                                        </a>
-                                                        <a href="#">
-                                                            <img alt="" src="img/sm-img-2.jpg">
-                                                        </a>
-                                                        <a href="#">
-                                                            <img alt="" src="img/sm-img-3.jpg">
-                                                        </a>
-                                                        <a href="#">
-                                                            <img alt="" src="img/sm-img-1.jpg">
-                                                        </a>
-                                                        <a href="#">
-                                                            <img alt="" src="img/sm-img-2.jpg">
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </article>
-                                    <article class="timeline-item alt">
-                                        <div class="timeline-desk">
-                                            <div class="panel">
-                                                <div class="panel-body">
-                                                    <span class="arrow-alt"></span>
-                                                    <span class="timeline-icon purple"></span>
-                                                    <span class="timeline-date">3:20 pm</span>
-                                                    <h1 class="purple">29 June | Saturday</h1>
-                                                    <p>Lorem ipsum dolor sit amet consiquest dio</p>
-                                                    <div class="notification">
-                                                        <i class=" icon-exclamation-sign"></i> New task added for <a href="#">Denial Collins</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </article>
-                                    <article class="timeline-item">
-                                        <div class="timeline-desk">
-                                            <div class="panel">
-                                                <div class="panel-body">
-                                                    <span class="arrow"></span>
-                                                    <span class="timeline-icon light-green"></span>
-                                                    <span class="timeline-date">07:49 pm</span>
-                                                    <h1 class="light-green">10 June | Friday</h1>
-                                                    <p><a href="#">Jonatha Smith</a> added new milestone <span><a href="#" class="light-green">prank</a></span> Lorem ipsum dolor sit amet consiquest dio</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </article>
-                                </div>
 
-                                <div class="clearfix">&nbsp;</div>
-                            </div>
-                        </section>
-                        <!--timeline end-->
-                    </div>
-                    <div class="col-lg-4">
-                        <!--revenue start-->
-                        <section class="panel">
-                            <div class="revenue-head">
-                                <span>
-                                    <i class="icon-bar-chart"></i>
-                                </span>
-                                <h3>Revenue</h3>
-                                <span class="rev-combo pull-right">
-                                    June 2013
-                                </span>
-                            </div>
-                            <div class="panel-body">
-                                <div class="row">
-                                    <div class="col-lg-6 col-sm-6 text-center">
-                                        <div class="easy-pie-chart">
-                                            <div class="percentage" data-percent="35"><span>35</span>%</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-sm-6">
-                                        <div class="chart-info chart-position">
-                                            <span class="increase"></span>
-                                            <span>Revenue Increase</span>
-                                        </div>
-                                        <div class="chart-info">
-                                            <span class="decrease"></span>
-                                            <span>Revenue Decrease</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="panel-footer revenue-foot">
-                                <ul>
-                                    <li class="first active">
-                                        <a href="javascript:;">
-                                            <i class="icon-bullseye"></i>
-                                            Graphical
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;">
-                                            <i class=" icon-th-large"></i>
-                                            Tabular
-                                        </a>
-                                    </li>
-                                    <li class="last">
-                                        <a href="javascript:;">
-                                            <i class=" icon-align-justify"></i>
-                                            Listing
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </section>
-                        <!--revenue end-->
-                        <!--features carousel start-->
-                        <section class="panel">
-                            <div class="flat-carousal">
-                                <div id="owl-demo" class="owl-carousel owl-theme">
-                                    <div class="item">
-                                        <h1>Flatlab is new model of admin dashboard for happy use</h1>
-                                        <div class="text-center">
-                                            <a href="javascript:;" class="view-all">View All</a>
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <h1>Fully responsive and build with Bootstrap 3.0</h1>
-                                        <div class="text-center">
-                                            <a href="javascript:;" class="view-all">View All</a>
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <h1>Responsive Frontend is free if you get this.</h1>
-                                        <div class="text-center">
-                                            <a href="javascript:;" class="view-all">View All</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="panel-body">
-                                <ul class="ft-link">
-                                    <li class="active">
-                                        <a href="javascript:;">
-                                            <i class="icon-reorder"></i>
-                                            Sales
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;">
-                                            <i class=" icon-calendar-empty"></i>
-                                            promo
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;">
-                                            <i class=" icon-camera"></i>
-                                            photo
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;">
-                                            <i class=" icon-circle"></i>
-                                            other
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </section>
-                        <!--features carousel end-->
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-8">
-                        <!--latest product info start-->
-                        <section class="panel post-wrap pro-box">
-                            <aside>
-                                <div class="post-info">
-                                    <span class="arrow-pro right"></span>
-                                    <div class="panel-body">
-                                        <h1><strong>popular</strong> <br> Brand of this week</h1>
-                                        <div class="desk yellow">
-                                            <h3>Dimond Ring</h3>
-                                            <p>Lorem ipsum dolor set amet lorem ipsum dolor set amet ipsum dolor set amet</p>
-                                        </div>
-                                        <div class="post-btn">
-                                            <a href="javascript:;">
-                                                <i class="icon-chevron-sign-left"></i>
-                                            </a>
-                                            <a href="javascript:;">
-                                                <i class="icon-chevron-sign-right"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </aside>
-                            <aside class="post-highlight yellow v-align">
-                                <div class="panel-body text-center">
-                                    <div class="pro-thumb">
-                                        <img src="img/ring.jpg" alt="">
-                                    </div>
-                                </div>
-                            </aside>
-                        </section>
-                        <!--latest product info end-->
-                        <!--twitter feedback start-->
-                        <section class="panel post-wrap pro-box">
-                            <aside class="post-highlight terques v-align">
-                                <div class="panel-body">
-                                    <h2>Flatlab is new model of admin dashboard <a href="javascript:;"> http://demo.com/</a> 4 days ago by jonathan smith</h2>
-                                </div>
-                            </aside>
-                            <aside>
-                                <div class="post-info">
-                                    <span class="arrow-pro left"></span>
-                                    <div class="panel-body">
-                                        <div class="text-center twite">
-                                            <h1>Twitter Feed</h1>
-                                        </div>
 
-                                        <footer class="social-footer">
-                                            <ul>
-                                                <li>
-                                                    <a href="#">
-                                                        <i class="icon-facebook"></i>
-                                                    </a>
-                                                </li>
-                                                <li class="active">
-                                                    <a href="#">
-                                                        <i class="icon-twitter"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <i class="icon-google-plus"></i>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <i class="icon-pinterest"></i>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </footer>
-                                    </div>
-                                </div>
-                            </aside>
-                        </section>
-                        <!--twitter feedback end-->
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="row">
-                            <div class="col-xs-6">
-                                <!--pie chart start-->
-                                <section class="panel">
-                                    <div class="panel-body">
-                                        <div class="chart">
-                                            <div id="pie-chart"></div>
-                                        </div>
-                                    </div>
-                                    <footer class="pie-foot">
-                                        Free: 260GB
-                                    </footer>
-                                </section>
-                                <!--pie chart start-->
-                            </div>
-                            <div class="col-xs-6">
-                                <!--follower start-->
-                                <section class="panel">
-                                    <div class="follower">
-                                        <div class="panel-body">
-                                            <h4>Jonathan Smith</h4>
-                                            <div class="follow-ava">
-                                                <img src="img/follower-avatar.jpg" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
+                <?php
+                if (isset($_GET['p'])) {
+                    $page = $_GET['p'];
+                    include  $page . '.php';
+                    // echo $page . '.php';
+                } else {
+                    echo 'صفحه ی اصلی';
+                }
+                ?>
 
-                                    <footer class="follower-foot">
-                                        <ul>
-                                            <li>
-                                                <h5>2789</h5>
-                                                <p>Follower</p>
-                                            </li>
-                                            <li>
-                                                <h5>270</h5>
-                                                <p>Following</p>
-                                            </li>
-                                        </ul>
-                                    </footer>
-                                </section>
-                                <!--follower end-->
-                            </div>
-                        </div>
-                        <!--weather statement start-->
-                        <section class="panel">
-                            <div class="weather-bg">
-                                <div class="panel-body">
-                                    <div class="row">
-                                        <div class="col-xs-6">
-                                            <i class="icon-cloud"></i>
-                                            California
-                                        </div>
-                                        <div class="col-xs-6">
-                                            <div class="degree">
-                                                24°
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <footer class="weather-category">
-                                <ul>
-                                    <li class="active">
-                                        <h5>humidity</h5>
-                                        56%
-                                    </li>
-                                    <li>
-                                        <h5>precip</h5>
-                                        1.50 in
-                                    </li>
-                                    <li>
-                                        <h5>winds</h5>
-                                        10 mph
-                                    </li>
-                                </ul>
-                            </footer>
 
-                        </section>
-                        <!--weather statement end-->
-                    </div>
-                </div>
+
+
+
+
+
+
 
             </section>
         </section>
