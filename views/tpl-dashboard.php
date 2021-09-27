@@ -21,7 +21,33 @@
     <!-- Custom styles for this template -->
     <link href="assets/css/dashbord-style.css" rel="stylesheet">
     <link href="assets/css/style-responsive.css" rel="stylesheet" />
+    <style>
+        div#modalEditMenu {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #00000099;
+            display: none;
+        }
 
+        .modalContent {
+            width: 50%;
+            background-color: white;
+            position: absolute;
+            top: 15%;
+            right: 25%;
+            height: 500px;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .closeEditMenu{
+            position: absolute;
+            left: 10px;
+            top: 10px;
+        }
+    </style>
 </head>
 
 <body>

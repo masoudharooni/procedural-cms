@@ -19,3 +19,28 @@ if ($_POST['action'] == 'login') {
     }
 }
 
+// delete menu
+if ($_POST['action'] == 'deleteMenu') {
+    echo deleteMenu($_POST['menuId']) ?? 'لطفا مجددا تلاش کنید!!!';
+}
+
+// toggle status menu
+if ($_POST['action'] == 'toggleStatusMenu') {
+    echo toggleStausMenu($_POST['menuId']) ?? 'لطفا مجددا تلاش کنید!!!';
+}
+
+// edit menu
+if ($_POST['action'] == 'editMenu') {
+    echo json_encode(getMenuById($_POST['menuId']));
+}
+if ($_POST['action'] == 'editMenuData') {
+    $expload = explode('&', $_POST['data']);
+    $data = (object)[
+        'menuName' => explode('=', $expload[0])[1],
+        'menuLink' => explode('=', $expload[1])[1],
+        'menuParentId' => explode('=', $expload[2])[1],
+        'menuSort' => explode('=', $expload[3])[1],
+        'menuStatus' => explode('=', $expload[4])[1],
+    ];
+    echo updateMenu($_POST['id'], $data) ?? false;
+}
