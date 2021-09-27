@@ -41,6 +41,41 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!---webfont--->
 	<link rel="stylesheet" type="text/css" href="assets/css/style_common.css" />
 	<link rel="stylesheet" type="text/css" href="assets/css/style9.css" />
+
+	<style>
+		.dropdown {
+			position: absolute;
+			background: #17c2a4;
+			width: 100%;
+			color: #fff;
+			text-align: center;
+			font-size: 17px;
+			display: none;
+		}
+
+		.dropdown li {
+			padding: 10px;
+		}
+
+		.dropdown li:hover {
+			background-color: #007561;
+			cursor: pointer;
+		}
+
+		.dropDownContainer:hover .dropdown {
+			display: block;
+		}
+
+		.dropDownLink {
+			border-bottom: 5px solid rgba(0, 0, 0, 0);
+		}
+
+		.dropDownLink:hover {
+			text-decoration: none;
+			color: inherit;
+			border-bottom: 5px solid red;
+		}
+	</style>
 </head>
 
 <body>
@@ -73,12 +108,30 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav">
-							<li class="active"><a href="index.html" class="wow fadeInDownBig" data-wow-delay=".1s">صفحه اصلی<span class="sr-only">(current)</span></a></li>
-							<li><a href="about.html" class="wow fadeInDownBig" data-wow-delay=".2s">درباره ما</a></li>
-							<li><a href="services.html" class="wow fadeInDownBig" data-wow-delay=".4s">خدمات</a></li>
-							<li><a href="gallery.html" class="wow fadeInDownBig" data-wow-delay=".6s">گالری</a></li>
-							<li><a href="codes.html" class="wow fadeInDownBig" data-wow-delay=".7s">نمونه ها</a></li>
-							<li><a href="contact.html" class="wow fadeInDownBig" data-wow-delay=".9s">تماس با ما</a></li>
+							<li class="active"><a href="<?= $_SERVER['PHP_SELF'] ?>" class="wow fadeInDownBig" data-wow-delay=".1s">صفحه اصلی<span class="sr-only">(current)</span></a></li>
+							<?php
+							if (!is_null($menus)) {
+								foreach ($menus as $menu) :
+									if ($menu['parentId'] == 0) {
+
+							?>
+										<li class="dropDownContainer"><a href="<?= $menu['url'] ?>" class="wow fadeInDownBig" data-wow-delay=".2s"><?= $menu['title'] ?></a>
+											<ul class="dropdown">
+												<?php
+												$getMenuByParentId = getMenusByParentId($menu['id']);
+												if (!is_null($getMenuByParentId)) {
+													foreach ($getMenuByParentId as $menuParent) :
+												?>
+														<li><a class="dropDownLink" href="<?= $menuParent['url'] ?>"><?= $menuParent['title'] ?></a></li>
+												<?php endforeach;
+												} else {
+													echo "<span style='line-height:30px;'>زیر منو اضافه کنید.</span>";
+												} ?>
+											</ul>
+										</li>
+							<?php }
+								endforeach;
+							} ?>
 						</ul>
 					</div>
 				</div>
@@ -188,9 +241,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 			</div>
 		</div>
-		<!---welcome-->
-		<!--ترجمه شده توسط مرجع تخصصی برنامه نویسان-->
-		<!---product-->
 		<div class="product-section">
 			<div class="container">
 				<h3>
@@ -211,7 +261,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					<div class="col-md-6 product-grid wow fadeInLeft animated" data-wow-delay=".5s">
 						<div class="product-right">
-							<img src="assets/img/p1.jpg" class= "img-responsive" alt="" />
+							<img src="assets/img/p1.jpg" class="img-responsive" alt="" />
 						</div>
 						<div class="product-left">
 							<h4>

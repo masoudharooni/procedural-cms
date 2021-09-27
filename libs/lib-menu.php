@@ -9,10 +9,14 @@ function addMenu(array $data): bool
     return $stmt->execute() ?? false;
 }
 
-function getMenus($params = null)
+function getMenus(bool $status = null)
 {
     global $conn;
-    $sql = "SELECT id , title , url , sort , status , parent , created_at FROM menus";
+    $condition = null;
+    if (is_bool($status) and !is_null($status)) {
+        $condition = "WHERE status = {$status}";
+    }
+    $sql = "SELECT id , title , url , sort , status , parent , created_at FROM menus {$condition} ORDER BY sort ASC";
     $stmt = $conn->prepare($sql);
     $stmt->bind_result($id, $title, $url, $sort, $status, $parentId, $created_at);
     $stmt->execute();
@@ -108,4 +112,28 @@ function updateMenu(int $id, $params): bool
         $id
     );
     return $stmt->execute() ?? false;
+}
+
+function getMenusByParentId(int $parentId)
+{
+    global $conn;
+    $sql = "SELECT id , title , url , sort , status , parent , created_at FROM menus WHERE parent = ? AND status = 1 ORDER BY sort ASC";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param('i', $parentId);
+    $stmt->bind_result($id, $title, $url, $sort, $status, $parentId, $created_at);
+    $stmt->execute();
+    $counter = 0;
+    while ($stmt->fetch()) {
+        $result[$counter] = [
+            'id' => $id,
+            'title' => $title,
+            'url' => $url,
+            'sort' => $sort,
+            'status' => $status,
+            'parentId' => $parentId,
+            'createdAt' => $created_at
+        ];
+        $counter++;
+    }
+    return $result ?? null;
 }

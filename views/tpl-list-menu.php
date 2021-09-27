@@ -211,7 +211,7 @@ use Hekmatinasser\Verta\Verta; ?>
             editserialize = decodeURIComponent(editserialize.replace(/\+/g, " "));
             $.ajax({
                 type: form.attr('method'),
-                url: form.attr('action'),
+                url: form.attr('action'), 
                 data: {
                     action: 'editMenuData',
                     data: editserialize,
