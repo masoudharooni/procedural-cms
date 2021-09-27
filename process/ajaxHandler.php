@@ -44,3 +44,31 @@ if ($_POST['action'] == 'editMenuData') {
     ];
     echo updateMenu($_POST['id'], $data) ?? false;
 }
+
+
+// delete product cat
+if ($_POST['action'] == 'deleteProductCat') {
+    echo deleteProductCat($_POST['productCatId']) ?? 'لطفا مجددا تلاش کنید!!!';
+}
+
+
+// toggle status products cat
+if ($_POST['action'] == 'toggleStatusProductCat') {
+    echo toggleStatusProductCat($_POST['productCatId']) ?? 'لطفا مجددا تلاش کنید!!!';
+}
+
+
+// edit menu
+if ($_POST['action'] == 'editProductCat') {
+    echo json_encode(getProductsCat(null, $_POST['productCatId'])[0]);
+}
+
+if ($_POST['action'] == 'editProductData') {
+    $expload = explode('&', $_POST['data']);
+    $data = (object)[
+        'menuName' => explode('=', $expload[0])[1],
+        'menuSort' => explode('=', $expload[1])[1],
+        'menuStatus' => explode('=', $expload[2])[1]
+    ];
+    echo updateProductCat($_POST['id'], $data) ?? false;
+}

@@ -42,7 +42,8 @@
             padding: 10px;
             border-radius: 10px;
         }
-        .closeEditMenu{
+
+        .closeEditMenu {
             position: absolute;
             left: 10px;
             top: 10px;
@@ -315,9 +316,18 @@
                         <ul class="sub">
                             <li><a class="" href="?p=add-menu">افزودن منوی جدید</a></li>
                             <li><a class="" href="?p=list-menu">لیست منو ها</a></li>
-                            <li><a class="" href="widget.html">ویجت ها</a></li>
-                            <li><a class="" href="slider.html">اسلایدر ها</a></li>
-                            <li><a class="" href="font_awesome.html">فونت های شکل دار</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="sub-menu">
+                        <a href="javascript:;" class="">
+                            <i class="icon-book"></i>
+                            <span>مدیریت دسته بندی ها</span>
+                            <span class="arrow"></span>
+                        </a>
+                        <ul class="sub">
+                            <li><a class="" href="?p=add-product-cat">افزودن دسته بندی جدید جدید</a></li>
+                            <li><a class="" href="?p=list-product-cat">لیست دسته بندی ها</a></li>
                         </ul>
                     </li>
 

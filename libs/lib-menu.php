@@ -78,7 +78,6 @@ function getMenuById(int $id)
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('i', $id);
     $stmt->bind_result($idNow, $title, $url, $sort, $status, $parentId, $created_at);
-    // echo $sql  . "<br>";
     $stmt->execute();
     $stmt->fetch();
     $result = [

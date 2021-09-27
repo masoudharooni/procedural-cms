@@ -12,3 +12,4 @@ if ($conn->connect_errno) {
 // connection is true
 include ROOT_PATH . 'libs/lib-auth.php';
 include ROOT_PATH . 'libs/lib-menu.php';
+include ROOT_PATH . 'libs/lib-product.php';

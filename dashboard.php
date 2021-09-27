@@ -17,6 +17,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (isset($_POST['addProductCatBtn'])) {
+        if (addProductCat($_POST)) {
+            header("Location:dashboard.php?p=add-product-cat&add-product-cat=1");
+        } else {
+            header("Location:dashboard.php?p=add-product-cat&add-product-cat=0");
+        }
+    }
+}
+
 
 
 
