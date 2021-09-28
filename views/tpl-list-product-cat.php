@@ -1,7 +1,10 @@
+<?php
+
+use Hekmatinasser\Verta\Verta; ?>
 <div class="col-lg-12">
     <section class="panel">
         <header class="panel-heading">
-            لیست منـــــــــــــو ها
+            لیست دستــــــــــــــــــــه بندی ها
         </header>
         <table class="table table-striped table-advance table-hover">
             <thead>
@@ -20,6 +23,12 @@
                 ?>
                         <tr>
                             <td><a href="#"><?= $value['title'] ?></a></td>
+                            <td>
+                                <?php
+                                $v = new Verta($value['createdAt']);
+                                echo $v->format("%d / %B / %Y");
+                                ?>
+                            </td>
                             <td><?= $value['sort'] ?></td>
                             <td><span class="label label-<?= ($value['status'] ? 'success' : 'danger') ?> label-mini"><?= ($value['status'] ? 'فعال' : 'غیرفعال') ?></span></td>
                             <td>

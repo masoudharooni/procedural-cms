@@ -34,7 +34,7 @@
 
 if (isset($_GET['add-product-cat'])) {
     if (in_array($_GET['add-product-cat'], [0, 1]) and $_GET['add-product-cat'] == 1) {
-        echo "<div style='line-height:30px;' class='alert alert-success alert-block fade in'> <button data-dismiss='alert' class='close close-sm' type='button'> <i class='icon-remove'></i> </button> <h4> <i class='icon-ok-sign'></i> با موفقیت انجام شد.! </h4> <p>دسته بندی شما با موفقیت اضافه شد.</p> </div>";
+        echo "<div style='line-height:30px;' class='alert alert-success alert-block fade in'> <button data-dismiss='alert' class='close close-sm' type='button'> <i class='icon-remove'></i> </button> <h4> <i class='icon-ok-sign'></i> <a href='dashboard.php?p=list-product-cat'>با موفقیت انجام شد.!</a> </h4> <p>دسته بندی شما با موفقیت اضافه شد.</p> </div>";
     } elseif (in_array($_GET['add-product-cat'], [0, 1]) and $_GET['add-product-cat'] == 0) {
         echo "<div style='line-height:30px;' class='alert alert-block alert-danger fade in'> <button data-dismiss='alert' class='close close-sm' type='button'> <i class='icon-remove'></i> </button> <strong>اوه ، با خطا مواجه شد.</strong>دسته بندی شما اضافه نشد ، مجددا تلاش کنید!</div>";
     }

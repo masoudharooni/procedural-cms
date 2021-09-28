@@ -72,3 +72,19 @@ if ($_POST['action'] == 'editProductData') {
     ];
     echo updateProductCat($_POST['id'], $data) ?? false;
 }
+
+
+// delete products
+if ($_POST['action'] == 'deletePro') {
+    echo deleteProduct($_POST['proId']) ?? 'لطفا مجددا تلاش کنید!!!';
+}
+
+// toggle status products
+if ($_POST['action'] == 'toggleStatusPro') {
+    echo toggleStatusProduct($_POST['proId']) ?? 'لطفا مجددا تلاش کنید!!!';
+}
+
+// edit product
+if ($_POST['action'] == 'editPro') {
+    echo json_encode(getProducts(null , $_POST['proId'])[0]);
+}

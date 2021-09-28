@@ -22,6 +22,12 @@
     <link href="assets/css/dashbord-style.css" rel="stylesheet">
     <link href="assets/css/style-responsive.css" rel="stylesheet" />
     <style>
+        th{
+            text-align: center;
+        }
+        td{
+            text-align: center;
+        }
         div#modalEditMenu {
             position: absolute;
             top: 0;
@@ -326,8 +332,20 @@
                             <span class="arrow"></span>
                         </a>
                         <ul class="sub">
-                            <li><a class="" href="?p=add-product-cat">افزودن دسته بندی جدید جدید</a></li>
+                            <li><a class="" href="?p=add-product-cat">افزودن دسته بندی جدید</a></li>
                             <li><a class="" href="?p=list-product-cat">لیست دسته بندی ها</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="sub-menu">
+                        <a href="javascript:;" class="">
+                            <i class="icon-book"></i>
+                            <span>مدیریت محصولات</span>
+                            <span class="arrow"></span>
+                        </a>
+                        <ul class="sub">
+                            <li><a class="" href="?p=add-product">افزودن محصول جدید</a></li>
+                            <li><a class="" href="?p=list-products">لیست محصولات ها</a></li>
                         </ul>
                     </li>
 
@@ -353,7 +371,7 @@
                 <?php
                 if (isset($_GET['p'])) {
                     $page = $_GET['p'];
-                    include  $page . '.php';
+                    include  'views/tpl-' . $page . '.php';
                     // echo $page . '.php';
                 } else {
                     echo 'صفحه ی اصلی';

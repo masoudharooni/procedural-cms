@@ -7,6 +7,19 @@ if (!isset($_SESSION['admin_login'])) {
     header('location:adm-auth.php');
 }
 
+// get product cat
+$productCategory = getProductsCat(1, null);
+$productsCat     = getProductsCat();
+
+// get product
+$showProducts = getProducts();
+
+
+// get menus 
+$menus = getMenus();
+
+// add menu
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['addMenuBtn'])) {
         if (addMenu($_POST)) {
@@ -16,6 +29,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 }
+
+// add product category
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['addProductCatBtn'])) {
@@ -27,6 +42,46 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 
+// add product
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (isset($_POST['addProBtn'])) {
+        if (!isset($_FILES['file']) or $_FILES['file']['error'] == UPLOAD_ERR_NO_FILE) {
+            header("Location:dashboard.php?p=add-produc&add-product=0");
+        }
+        $imagePath = upload($_FILES);
+        if ($imagePath['bool']) {
+            if (addProduct($_POST, $imagePath['text'])) {
+                header("Location:dashboard.php?p=add-product&add-product=1");
+            } else {
+                header("Location:dashboard.php?p=add-product&add-product=0");
+            }
+        } else {
+            header("Location:dashboard.php?p=add-product&add-product=0");
+        }
+    }
+}
+
+
+// update a product 
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (isset($_POST['editProBtn'])) {
+        if (!isset($_FILES['file']) or $_FILES['file']['error'] == UPLOAD_ERR_NO_FILE) {
+            echo (updateProduct($_POST, null)) ? header("Location:dashboard.php?p=list-products&update-products=1") : header("Location:dashboard.php?p=list-products&update-products=0");
+        } else {
+            $imagePath = upload($_FILES);
+            if ($imagePath['bool']) {
+                if (updateProduct($_POST, $imagePath['text'])) {
+                    header("Location:dashboard.php?p=list-products&update-products=1");
+                } else {
+                    header("Location:dashboard.php?p=list-products&update-products=0");
+                }
+            } else {
+                header("Location:dashboard.php?p=list-products&update-products=0");
+            }
+        }
+    }
+}
 
 
 

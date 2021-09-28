@@ -21,8 +21,8 @@ use Hekmatinasser\Verta\Verta; ?>
             </thead>
             <tbody>
                 <?php
-                if (!is_null($menuList)) {
-                    foreach ($menuList as $value) :
+                if (!is_null($menus)) {
+                    foreach ($menus as $value) :
                 ?>
                         <tr>
                             <td><a href="#"><?= $value['title'] ?></a></td>
@@ -76,8 +76,8 @@ use Hekmatinasser\Verta\Verta; ?>
                         <select class="form-control m-bot15" name="menuParent">
                             <option value="0">سرگروه</option>
                             <?php
-                            if (!is_null($menuList)) {
-                                foreach ($menuList as $value) :
+                            if (!is_null($menus)) {
+                                foreach ($menus as $value) :
                                     if ($value['parentId'] == 0) {
                             ?>
                                         <option class="parentOption" value="<?= $value['id'] ?>"><?= $value['title'] ?></option>
