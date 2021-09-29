@@ -86,5 +86,45 @@ if ($_POST['action'] == 'toggleStatusPro') {
 
 // edit product
 if ($_POST['action'] == 'editPro') {
-    echo json_encode(getProducts(null , $_POST['proId'])[0]);
+    echo json_encode(getProducts(null, $_POST['proId'])[0]);
+}
+
+// delete product cat
+if ($_POST['action'] == 'deleteNewsCat') {
+    echo deleteNewsCat($_POST['newsCatId']) ?? 'لطفا مجددا تلاش کنید!!!';
+}
+
+// toggle status products
+if ($_POST['action'] == 'toggleStatusNewsCat') {
+    echo toggleStatusNewsCat($_POST['newsCatId']) ?? 'لطفا مجددا تلاش کنید!!!';
+}
+
+// edit news category
+if ($_POST['action'] == 'editNewsCat') {
+    echo json_encode(getNewsCat(null, $_POST['newsCatId'])[0]);
+}
+if ($_POST['action'] == 'editNewsData') {
+    $expload = explode('&', $_POST['data']);
+    $data = (object)[
+        'newsCatName' => explode('=', $expload[0])[1],
+        'newsCatSort' => explode('=', $expload[1])[1],
+        'newsCatStatus' => explode('=', $expload[2])[1]
+    ];
+    echo updateNewsCat($_POST['id'], $data) ?? false;
+}
+
+// delete news 
+if ($_POST['action'] == 'deleteNews') {
+    echo deleteNews($_POST['newsId']) ?? 'لطفا مجددا تلاش کنید!!!';
+}
+
+// toggle status news
+if ($_POST['action'] == 'toggleStatusNews') {
+    echo toggleStatusNews($_POST['newsId']) ?? 'لطفا مجددا تلاش کنید!!!';
+}
+
+// edit product
+if ($_POST['action'] == 'editNews') {
+    echo json_encode(getNews(null, $_POST['newsId'])[0]);
+    // var_dump(getNews(null, $_POST['newsId'])[0]);
 }

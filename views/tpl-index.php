@@ -1,4 +1,6 @@
-<!--ترجمه شده توسط مرجع تخصصی برنامه نویسان-->
+<?php
+
+use Hekmatinasser\Verta\Verta; ?>
 <!DOCTYPE HTML>
 <html>
 
@@ -43,6 +45,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<link rel="stylesheet" type="text/css" href="assets/css/style9.css" />
 
 	<style>
+		.product-left {
+			height: 100%;
+			overflow-y: scroll;
+		}
+
+		.product-left::-webkit-scrollbar {
+			width: 0px;
+		}
+
+		.col-md-6.product-grid.wow.fadeInRight.animated.animated {
+			height: 250px;
+			margin-top: 15px;
+		}
+
+		img.img-responsive.proImage {
+			height: 250px;
+		}
+
 		.dropdown {
 			position: absolute;
 			background: #17c2a4;
@@ -138,8 +158,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</nav>
 			<div class="banner-center">
 				<marquee>
-					<h3>
-						بهترین مزرعه کشاورزی</h3>
+					<h3>بهترین مزرعه کشاورزی</h3>
 				</marquee>
 			</div>
 
@@ -194,10 +213,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="welcome-grids">
 					<div class="col-md-3 welcome-grid wow fadeInRight animated" data-wow-delay=".5s">
 						<div class="welcome-text">
-							<h4>
-
-								لورم ایپسوم </h4>
-							<!--ترجمه شده توسط مرجع تخصصی برنامه نویسان-->
+							<h4>ایپسوم </h4>
 							<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</p>
 						</div>
 						<div class="welcome-icon">
@@ -243,65 +259,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 		<div class="product-section">
 			<div class="container">
-				<h3>
-					محصولات محبوب</h3>
+				<h3>محصولات محبوب</h3>
+
 				<div class="product-grids">
-					<div class="col-md-6 product-grid wow fadeInRight animated" data-wow-delay=".5s">
-						<div class="product-right">
-							<img src="assets/img/p.jpg" class="img-responsive" alt="" />
-						</div>
-						<div class="product-left">
-							<h4>
+					<?php
+					if (!is_null($products)) {
+						foreach ($products as $value) :
+					?>
+							<div class="col-md-6 product-grid wow fadeInRight animated" data-wow-delay=".5s">
+								<div class="product-right">
+									<a href="<?= BASE_URL . $value['imagePath'] ?>"><img src="<?= $value['imagePath'] ?>" class="img-responsive proImage" alt="عکس محصول لود نشد!" width="300px" height="200px"></a>
+								</div>
+								<div class="product-left">
+									<h4><?= $value['title'] ?></h4>
+									<p><?= $value['description'] ?></p>
+								</div>
+								<div class="clearfix"></div>
+							</div>
 
-								لورم ایپسوم یا طرح‌نما </h4>
-							<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و </p>
-							<a href="gallery.html"><i class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></i></a>
-						</div>
-						<div class="clearfix"></div>
-					</div>
-					<div class="col-md-6 product-grid wow fadeInLeft animated" data-wow-delay=".5s">
-						<div class="product-right">
-							<img src="assets/img/p1.jpg" class="img-responsive" alt="" />
-						</div>
-						<div class="product-left">
-							<h4>
-
-								لورم ایپسوم یا طرح‌نما </h4>
-							<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و </p>
-							<a href="gallery.html"><i class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></i></a>
-						</div>
-						<div class="clearfix"></div>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-				<div class="product-grids">
-					<div class="col-md-6 product-grid1 wow fadeInRight animated" data-wow-delay=".5s">
-						<div class="product1-right">
-							<h4>
-
-								لورم ایپسوم یا طرح‌نما </h4>
-							<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و </p>
-							<a href="gallery.html"><i class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></i></a>
-						</div>
-						<div class="product1-left">
-							<img src="assets/img/p2.jpg" class="img-responsive" alt="" />
-						</div>
-						<div class="clearfix"></div>
-					</div>
-					<div class="col-md-6 product-grid1 wow fadeInLeft animated" data-wow-delay=".5s">
-						<div class="product1-right">
-							<h4>
-
-								لورم ایپسوم یا طرح‌نما </h4>
-							<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و </p>
-							<a href="gallery.html"><i class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></i></a>
-						</div>
-						<div class="product1-left">
-							<img src="assets/img/p3.jpg" class="img-responsive" alt="" />
-						</div>
-						<div class="clearfix"></div>
-					</div>
-					<div class="clearfix"></div>
+					<?php
+						endforeach;
+					} ?>
 				</div>
 			</div>
 		</div>
@@ -311,66 +289,36 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="news-section">
 			<div class="container">
 				<h3>آخرین اخبار</h3>
-				<div class="news-grids wow fadeInLeft animated" data-wow-delay=".5s">
-					<div class="col-md-4 new-grid">
-						<div id="box" class="burst-circle teal">
-							<div class="caption"></div>
-							<img src="assets/img/n1.jpg" class="img-responsive" />
-							<h4> طرح‌نما </h4>
+
+				<?php
+				if (!is_null($news)) {
+					foreach ($news as $value) :
+				?>
+						<div class="news-grids wow fadeInLeft animated" data-wow-delay=".5s">
+							<div class="col-md-4 new-grid">
+								<div id="box" class="burst-circle teal">
+									<img src="<?= $value['imagePath'] ?>" alt="عکس خبر لود نشد!" class="img-responsive" />
+									<a style="cursor: pointer;" href="<?= BASE_URL . $value['imagePath'] ?>"><h4><?= 'در دسته بندی : ' . getNewsCat(null, $value['category'])[0]['title'] ?></h4></a>
+								</div>
+							</div>
+
+							<div class="col-md-8 new-grid1 hvr-bounce-to-left">
+								<h5>
+									<?php
+									$v = new Verta($value['createdAt']);
+									echo $v->format("%d / %B / %Y");
+									?>
+								</h5>
+								<h4><?= $value['title'] ?> </h4>
+								<p><?= $value['description'] ?></p>
+							</div>
+							<div class="clearfix"></div>
 						</div>
-					</div>
-					<div class="col-md-8 new-grid1 hvr-bounce-to-left">
-						<h5><i class="glyphicon glyphicon-calendar" aria-hidden="true"></i> 25 November 2015 </h5>
-						<h4>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ </h4>
-						<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد</p>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-				<div class="news-grids wow fadeInRight animated" data-wow-delay=".5s">
-					<div class="col-md-4 new-grid">
-						<div id="box" class="burst-circle teal">
-							<div class="caption"></div>
-							<img src="assets/img/n2.jpg" class="img-responsive" />
-							<h4> طرح‌نما </h4>
-						</div>
-					</div>
-					<div class="col-md-8 new-grid1 hvr-bounce-to-left">
-						<h5><i class="glyphicon glyphicon-calendar" aria-hidden="true"></i> 25 November 2015 </h5>
-						<h4>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ </h4>
-						<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد</p>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-				<div class="news-grids wow fadeInLeft animated" data-wow-delay=".5s">
-					<div class="col-md-4 new-grid">
-						<div id="box" class="burst-circle teal">
-							<div class="caption"></div>
-							<img src="assets/img/n3.jpg" class="img-responsive" />
-							<h4> طرح‌نما </h4>
-						</div>
-					</div>
-					<div class="col-md-8 new-grid1 hvr-bounce-to-left">
-						<h5><i class="glyphicon glyphicon-calendar" aria-hidden="true"></i> 25 November 2015 </h5>
-						<h4>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ </h4>
-						<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد</p>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-				<div class="news-grids wow fadeInRight animated" data-wow-delay=".5s">
-					<div class="col-md-4 new-grid">
-						<div id="box" class="burst-circle teal">
-							<div class="caption"></div>
-							<img src="assets/img/n4.jpg" class="img-responsive" />
-							<h4> طرح‌نما </h4>
-						</div>
-					</div>
-					<div class="col-md-8 new-grid1 hvr-bounce-to-left">
-						<h5><i class="glyphicon glyphicon-calendar" aria-hidden="true"></i> 25 November 2015 </h5>
-						<h4>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ </h4>
-						<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد</p>
-					</div>
-					<div class="clearfix"></div>
-				</div>
+				<?php
+					endforeach;
+				} ?>
+
+
 			</div>
 		</div>
 		<!---news--->

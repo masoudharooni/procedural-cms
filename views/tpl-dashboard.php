@@ -22,12 +22,14 @@
     <link href="assets/css/dashbord-style.css" rel="stylesheet">
     <link href="assets/css/style-responsive.css" rel="stylesheet" />
     <style>
-        th{
+        th {
             text-align: center;
         }
-        td{
+
+        td {
             text-align: center;
         }
+
         div#modalEditMenu {
             position: absolute;
             top: 0;
@@ -332,11 +334,13 @@
                             <span class="arrow"></span>
                         </a>
                         <ul class="sub">
-                            <li><a class="" href="?p=add-product-cat">افزودن دسته بندی جدید</a></li>
-                            <li><a class="" href="?p=list-product-cat">لیست دسته بندی ها</a></li>
+                            <li><a class="" href="?p=add-product-cat">افزودن برای محصولات</a></li>
+                            <li><a class="" href="?p=list-product-cat">لیست دسته محصولات</a></li>
+                            <li><a class="" href="?p=add-news-cat">افزودن برای اخبار</a></li>
+                            <li><a class="" href="?p=list-news-cat">لیست دسته اخبار</a></li>
                         </ul>
                     </li>
-                    
+
                     <li class="sub-menu">
                         <a href="javascript:;" class="">
                             <i class="icon-book"></i>
@@ -346,6 +350,18 @@
                         <ul class="sub">
                             <li><a class="" href="?p=add-product">افزودن محصول جدید</a></li>
                             <li><a class="" href="?p=list-products">لیست محصولات ها</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="sub-menu">
+                        <a href="javascript:;" class="">
+                            <i class="icon-book"></i>
+                            <span>مدیریت اخبار</span>
+                            <span class="arrow"></span>
+                        </a>
+                        <ul class="sub">
+                            <li><a class="" href="?p=add-news">افزودن خبر جدید</a></li>
+                            <li><a class="" href="?p=list-news">لیست اخبار</a></li>
                         </ul>
                     </li>
 

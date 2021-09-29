@@ -75,9 +75,9 @@ table {
 
 /* scroll width */
 
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   width: 0px;
-}
+} */
 
 a {
   text-decoration: none;

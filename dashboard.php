@@ -7,7 +7,7 @@ if (!isset($_SESSION['admin_login'])) {
     header('location:adm-auth.php');
 }
 
-// get product cat
+// get product category
 $productCategory = getProductsCat(1, null);
 $productsCat     = getProductsCat();
 
@@ -17,6 +17,16 @@ $showProducts = getProducts();
 
 // get menus 
 $menus = getMenus();
+
+
+// get news category
+$newsCat = getNewsCat();
+$newsCatActive = getNewsCat(1, null);
+
+// get news
+$list_of_news = getNews();
+
+// var_dump($list_of_news);die;
 
 // add menu
 
@@ -83,6 +93,58 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 
+// add news category'
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (isset($_POST['addNewsCatBtn'])) {
+        if (addNewsCat($_POST)) {
+            header("Location:dashboard.php?p=add-news-cat&add-news-cat=1");
+        } else {
+            header("Location:dashboard.php?p=add-news-cat&add-news-cat=0");
+        }
+    }
+}
+
+// add news
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (isset($_POST['addNewsBtn'])) {
+        if (!isset($_FILES['file']) or $_FILES['file']['error'] == UPLOAD_ERR_NO_FILE) {
+            header("Location:dashboard.php?p=add-news&add-news=0");
+        }
+        $imagePath = upload($_FILES);
+        if ($imagePath['bool']) {
+            if (addNews($_POST, $imagePath['text'])) {
+                header("Location:dashboard.php?p=add-news&add-news=1");
+            } else {
+                header("Location:dashboard.php?p=add-news&add-news=0");
+            }
+        } else {
+            header("Location:dashboard.php?p=add-news&add-news=0");
+        }
+    }
+}
+
+
+// update a news 
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (isset($_POST['editNewsBtn'])) {
+        if (!isset($_FILES['file']) or $_FILES['file']['error'] == UPLOAD_ERR_NO_FILE) {
+            echo (updateNews($_POST, null)) ? header("Location:dashboard.php?p=list-news&update-news=1") : header("Location:dashboard.php?p=list-news&update-news=0");
+        } else {
+            $imageNews = upload($_FILES);
+            if ($imageNews['bool']) {
+                if (updateNews($_POST, $imageNews['text'])) {
+                    header("Location:dashboard.php?p=list-news&update-news=1");
+                } else {
+                    header("Location:dashboard.php?p=list-news&update-news=0");
+                }
+            } else {
+                header("Location:dashboard.php?p=list-news&update-news=0");
+            }
+        }
+    }
+}
 
 
 include ROOT_PATH . 'views/tpl-dashboard.php';
