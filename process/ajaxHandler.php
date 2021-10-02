@@ -126,5 +126,14 @@ if ($_POST['action'] == 'toggleStatusNews') {
 // edit product
 if ($_POST['action'] == 'editNews') {
     echo json_encode(getNews(null, $_POST['newsId'])[0]);
-    // var_dump(getNews(null, $_POST['newsId'])[0]);
+}
+
+// delete massage on contacts
+if ($_POST['action'] == 'deleteMassage') {
+    echo deleteMassage($_POST['massageId']) ?? 'لطفا مجددا تلاش کنید!!!';
+}
+
+// toggle read or unread massage on contacts
+if ($_POST['action'] == 'toggleStatusMassage') {
+    echo toggleStatusMassage($_POST['massageId']) ?? 'لطفا مجددا تلاش کنید!!!';
 }

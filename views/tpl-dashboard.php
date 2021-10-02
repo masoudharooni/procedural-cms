@@ -1,3 +1,6 @@
+<?php
+
+use Hekmatinasser\Verta\Verta; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,6 +24,8 @@
     <!-- Custom styles for this template -->
     <link href="assets/css/dashbord-style.css" rel="stylesheet">
     <link href="assets/css/style-responsive.css" rel="stylesheet" />
+    <!-- ckeditor -->
+    <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
     <style>
         th {
             text-align: center;
@@ -160,63 +165,41 @@
                     <li id="header_inbox_bar" class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <i class="icon-envelope-alt"></i>
-                            <span class="badge bg-important">5</span>
+                            <span class="badge bg-important"><?= contactsReaded(0) ?></span>
                         </a>
                         <ul class="dropdown-menu extended inbox">
                             <div class="notify-arrow notify-arrow-red"></div>
                             <li>
-                                <p class="red">شما 5 پیام جدید دارید</p>
+                                <p class="red">شما <?= contactsReaded(0) ?> پیام خوانده نشده دارید.</p>
+
                             </li>
+
+                            <?php
+                            if (!is_null($preViewContacts)) {
+                                foreach ($preViewContacts as  $value) :
+                            ?>
+                                    <li>
+                                        <a href="<?= $value['id'] ?>">
+                                            <span class="photo"><img alt="avatar" src="assets/img/avatar-mini4.jpg"></span>
+                                            <span class="subject">
+                                                <span class="from"><?= $value['name'] ?></span>
+                                                <span class="time">
+                                                    <?php
+                                                    $v = new Verta($value['createdAt']);
+                                                    echo $v->format("%d / %B / %Y");
+                                                    ?>
+                                                </span>
+                                            </span>
+                                            <span class="message">
+                                                <?= $value['subject'] ?>
+                                            </span>
+                                        </a>
+                                    </li>
+                            <?php endforeach;
+                            } ?>
+
                             <li>
-                                <a href="#">
-                                    <span class="photo"><img alt="avatar" src="assets/img/avatar-mini.jpg"></span>
-                                    <span class="subject">
-                                        <span class="from">سجاد باقرزاده</span>
-                                        <span class="time">همین حالا</span>
-                                    </span>
-                                    <span class="message">
-                                        سلام،متن پیام نمایشی جهت تست
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="photo"><img alt="avatar" src="assets/img/avatar-mini2.jpg"></span>
-                                    <span class="subject">
-                                        <span class="from">ایمان مدائنی</span>
-                                        <span class="time">10 دقیقه قبل</span>
-                                    </span>
-                                    <span class="message">
-                                        سلام، چطوری شما؟
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="photo"><img alt="avatar" src="assets/img/avatar-mini3.jpg"></span>
-                                    <span class="subject">
-                                        <span class="from">صبا ذاکر</span>
-                                        <span class="time">3 ساعت قبل</span>
-                                    </span>
-                                    <span class="message">
-                                        چه پنل مدیریتی فوق العاده ایی
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="photo"><img alt="avatar" src="assets/img/avatar-mini4.jpg"></span>
-                                    <span class="subject">
-                                        <span class="from">مسعود شریفی</span>
-                                        <span class="time">همین حالا</span>
-                                    </span>
-                                    <span class="message">
-                                        سلام،متن پیام نمایشی جهت تست
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">نمایش تمامی پیام ها</a>
+                                <a href="?p=list-contacts">نمایش تمامی پیام ها</a>
                             </li>
                         </ul>
                     </li>
@@ -418,13 +401,16 @@
     <script src="assets/css/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
     <script src="assets/js/owl.carousel.js"></script>
     <script src="assets/js/jquery.customSelect.min.js"></script>
-
     <!--common script for all pages-->
     <script src="assets/js/common-scripts.js"></script>
 
     <!--script for this page-->
     <script src="assets/js/sparkline-chart.js"></script>
     <script src="assets/js/easy-pie-chart.js"></script>
+
+
+
+
 
     <script>
         //owl carousel

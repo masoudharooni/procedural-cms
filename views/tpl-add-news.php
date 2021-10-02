@@ -54,11 +54,16 @@
                 <textarea type="text" class="form-control ckeditor" rows="8" name="newsDescription" required style="resize: vertical;">توضیحات خبر . . .</textarea>
             </div>
 
-            <button type="submit" name="addNewsBtn" class="btn btn-info">ثبت خبر  </button>
+            <button type="submit" name="addNewsBtn" class="btn btn-info">ثبت خبر </button>
         </form>
 
     </div>
 </section>
+
+<script>
+    CKEDITOR.replace('newsDescription');
+</script>
+
 <?php
 
 if (isset($_GET['add-news'])) {

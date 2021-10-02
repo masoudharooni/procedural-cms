@@ -14,3 +14,4 @@ include ROOT_PATH . 'libs/lib-auth.php';
 include ROOT_PATH . 'libs/lib-menu.php';
 include ROOT_PATH . 'libs/lib-product.php';
 include ROOT_PATH . 'libs/lib-news.php';
+include ROOT_PATH . 'libs/lib-contacts.php';

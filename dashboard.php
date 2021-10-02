@@ -26,7 +26,23 @@ $newsCatActive = getNewsCat(1, null);
 // get news
 $list_of_news = getNews();
 
-// var_dump($list_of_news);die;
+// get contacts
+$allContacts = contacts();
+$preViewContacts = contacts(4);
+
+
+// send email to contacts
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (isset($_POST['sendEmailBtn'])) {
+        if (sendEmail($_POST['email'], $_POST['subject'], $_POST['msg'])) {
+            header("Location:dashboard.php?p=list-contacts&sendEmail=1");
+        } else {
+            header("Location:dashboard.php?p=list-contacts&sendEmail=0");
+        }
+    }
+}
+
+
 
 // add menu
 

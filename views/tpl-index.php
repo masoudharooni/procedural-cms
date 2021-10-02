@@ -1,6 +1,28 @@
 <?php
 
-use Hekmatinasser\Verta\Verta; ?>
+use Hekmatinasser\Verta\Verta;
+
+if (isset($_GET['contactUs']) and in_array($_GET['contactUs'], [0, 1]) and $_GET['contactUs'] == 1) {
+	echo '<div style="margin:20px" class="alert alert-success alert-block fade in">
+	<button data-dismiss="alert" class="close close-sm" type="button">
+		<i class="icon-remove">X</i>
+	</button>
+	<h4>
+		<i class="icon-ok-sign"></i>
+		تشکر از نظر شما.
+	</h4>
+	<p>نظر شما به مدیر وب سایت ارسال شد.</p>
+</div>';
+} elseif (isset($_GET['contactUs']) and in_array($_GET['contactUs'], [0, 1]) and $_GET['contactUs'] == 0) {
+	echo '<div class="alert alert-block alert-danger fade in">
+	<button data-dismiss="alert" class="close close-sm" type="button">
+		<i class="icon-remove">X</i>
+	</button>
+	<strong>نظر شما ثبت نشد !</strong> لطفا مجددا تلاش کنید.
+</div>';
+}
+
+?>
 <!DOCTYPE HTML>
 <html>
 
@@ -10,6 +32,7 @@ use Hekmatinasser\Verta\Verta; ?>
 	<!---css--->
 	<link href="assets/css/bootstrap.css" rel='stylesheet' type='text/css' />
 	<link href="assets/css/style.css" rel='stylesheet' type='text/css' />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<!---css--->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -45,6 +68,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<link rel="stylesheet" type="text/css" href="assets/css/style9.css" />
 
 	<style>
+		.news-grids.wow.fadeInLeft.animated.animated {
+			margin: 15px 0;
+			height: 300px;
+		}
+
+		.contactInput {
+			border-color: #000;
+		}
+
 		.product-left {
 			height: 100%;
 			overflow-y: scroll;
@@ -298,7 +330,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="col-md-4 new-grid">
 								<div id="box" class="burst-circle teal">
 									<img src="<?= $value['imagePath'] ?>" alt="عکس خبر لود نشد!" class="img-responsive" />
-									<a style="cursor: pointer;" href="<?= BASE_URL . $value['imagePath'] ?>"><h4><?= 'در دسته بندی : ' . getNewsCat(null, $value['category'])[0]['title'] ?></h4></a>
+									<a style="cursor: pointer;" href="<?= BASE_URL . $value['imagePath'] ?>">
+										<h4><?= 'در دسته بندی : ' . getNewsCat(null, $value['category'])[0]['title'] ?></h4>
+									</a>
 								</div>
 							</div>
 
@@ -322,8 +356,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 		</div>
 		<!---news--->
-		<!--ترجمه شده توسط مرجع تخصصی برنامه نویسان-->
-		<!---Testimonials--->
+
 		<div class="testimonials-section">
 			<div class="container">
 				<h3>گواهی نامه</h3>
@@ -339,10 +372,43 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 			</div>
 		</div>
-		<!---Testimonials--->
+		<!---Contacts us--->
+
+		<div class="mail" style="border-top: 1px solid #000;border-bottom:1px solid #000;padding-top:10px">
+			<div class="container">
+				<h2>تماس با ما</h2>
+				<div class="mail-grids">
+					<div class="col-md-6 mail-right wow fadeInLeft animated" data-wow-delay=".5s">
+						<h4>اطلاعات تماس</h4>
+						<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ </p>
+						<ul>
+							<li>تلفن<span>+8 (213) 746 820 82</span></li>
+							<li>ایمیل<a href="mailto:info@example.com">info@example.com</a></li>
+						</ul>
+						<ul>
+							<li>آدرس<span>تهران-خ شریعتی ابتدای خیابان ملک کوچه ایرانیاد پلاک1</span></li>
+						</ul>
+					</div>
+					<div class="col-md-6 mail-right wow fadeInRight animated" data-wow-delay=".5s">
+						<h4>ارسال پیام</h4>
+						<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ </p>
+						<form id="contactUs" action="<?= $_SERVER['PHP_SELF'] ?>" method="POST">
+							<input class="contactInput" name="contactName" type="text" placeholder="نام" required>
+							<input class="contactInput" name="contactEmail" type="email" placeholder="ایمیل" required>
+							<div class="clearfix"> </div>
+							<input class="contactInput" name="contactSubject" type="text" placeholder="موضوع" required>
+							<textarea name="contactDescription" class="contactInput" placeholder="
+نوع متن خود را در اینجا ...."></textarea>
+							<input class="contactInput" name="contactBtn" type="submit" value="ارسال">
+						</form>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+		</div>
+
 	</div>
 	<!---footer--->
-	<!--ترجمه شده توسط مرجع تخصصی برنامه نویسان-->
 	<div class="footer-section">
 		<div class="container">
 			<div class="footer-grids">
