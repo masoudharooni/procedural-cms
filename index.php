@@ -9,6 +9,10 @@ $menus = getMenus(1);
 $products = getProducts(1, null);
 $news = getNews(1, null);
 
+// get call info 
+$callInfo = getCallInfo();
+
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['contactBtn'])) {
         if (addContact($_POST)) {

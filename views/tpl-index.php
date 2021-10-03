@@ -380,13 +380,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="mail-grids">
 					<div class="col-md-6 mail-right wow fadeInLeft animated" data-wow-delay=".5s">
 						<h4>اطلاعات تماس</h4>
-						<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ </p>
+						<p><?= $callInfo['description'] ?> </p>
 						<ul>
-							<li>تلفن<span>+8 (213) 746 820 82</span></li>
-							<li>ایمیل<a href="mailto:info@example.com">info@example.com</a></li>
+							<li>تلفن<span><a href="tel:<?= $callInfo['phone'] ?>"></a><?= $callInfo['phone'] ?></span></li>
+							<li>ایمیل<a href="mailto:<?= $callInfo['email'] ?>"><?= $callInfo['email'] ?></a></li>
 						</ul>
 						<ul>
-							<li>آدرس<span>تهران-خ شریعتی ابتدای خیابان ملک کوچه ایرانیاد پلاک1</span></li>
+							<li>آدرس<span><?= $callInfo['address'] ?></span></li>
 						</ul>
 					</div>
 					<div class="col-md-6 mail-right wow fadeInRight animated" data-wow-delay=".5s">

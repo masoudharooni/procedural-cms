@@ -28,7 +28,17 @@ $list_of_news = getNews();
 
 // get contacts
 $allContacts = contacts();
-$preViewContacts = contacts(4);
+$preViewContacts = contacts(4, null, 0);
+
+
+
+// add call us info 
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (isset($_POST['addCallInfoBtn'])) {
+        addCallInfo($_POST) ? header("Location:dashboard.php?p=add-call-us&add-callInfo=1") : header("Location:dashboard.php?p=add-call-us&add-callInfo=0");
+    }
+}
+
 
 
 // send email to contacts
