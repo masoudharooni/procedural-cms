@@ -68,6 +68,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<link rel="stylesheet" type="text/css" href="assets/css/style9.css" />
 
 	<style>
+		.view {
+			float: right;
+		}
+
+		p.widgetDescription {
+			height: 170px;
+			width: 100%;
+			overflow-y: scroll;
+			text-align: center;
+		}
+
+		p.widgetDescription::-webkit-scrollbar {
+			width: 0px;
+		}
+
 		.news-grids.wow.fadeInLeft.animated.animated {
 			margin: 15px 0;
 			height: 300px;
@@ -204,43 +219,31 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="container">
 				<div class="banner-bottom">
 					<div class="banner-grids">
-						<div class="col-md-4 banner-grid wow fadeInRight animated" data-wow-delay=".5s">
-							<h4>
-								محصولات برتر</h4>
-							<div class="ban1">
-								<div class="ban-images  view fourth-effect">
-									<img src="assets/img/b1.jpg" class="img-responsive" alt="" />
-									<div class="mask"></div>
+						<?php
+						if (!is_null($widgets)) {
+							foreach ($widgets as $value) :
+						?>
+								<div class="col-md-4 banner-grid wow fadeInRight animated" data-wow-delay=".5s">
+									<h4><?= $value['title'] ?></h4>
+									<div class="ban1">
+										<div class="ban-images  view fourth-effect">
+											<a href="<?= BASE_URL . $value['imagePath'] ?>"><img src="<?= $value['imagePath'] ?>" class="img-responsive" alt="عکس ویجت مورد نظر شما لود نشد." /></a>
+											<div class="mask"></div>
+										</div>
+										<p class="widgetDescription"><?= $value['description'] ?></p>
+										<a href="#" class="button hvr-wobble-bottom" style="line-height: 30px;">تاریخ ثبت ویجت
+											<?php $v = new Verta($value['createdAt']);
+											echo "<br>" . $v->format("%d / %B / %Y");
+											?></a>
+									</div>
 								</div>
-								<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد</p>
-								<a href="about.html" class="button hvr-wobble-bottom">اطلاعات بیشتر</a>
-							</div>
-						</div>
-						<div class="col-md-4 banner-grid wow fadeInDownBig" data-wow-delay=".4s">
-							<h4>دانه کشاورزی</h4>
-							<div class="ban1">
-								<div class="ban-images  view fourth-effect">
-									<img src="assets/img/b2.jpg" class="img-responsive" alt="" />
-									<div class="mask"></div>
-								</div>
-								<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد</p>
-								<a href="about.html" class="button hvr-wobble-bottom">اطلاعات بیشتر</a>
-							</div>
-						</div>
-						<div class="col-md-4 banner-grid wow fadeInLeft animated" data-wow-delay=".5s">
-							<h4>فن آوری های ما</h4>
-							<div class="ban1">
-								<div class="ban-images  view fourth-effect">
-									<img src="assets/img/b1.jpg" class="img-responsive" alt="" />
-									<div class="mask"></div>
-								</div>
-								<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد</p>
-								<a href="about.html" class="button hvr-wobble-bottom">اطلاعات بیشتر</a>
-							</div>
-						</div>
-						<div class="clearfix"></div>
+						<?php endforeach;
+						} ?>
+						<!-- <div class="clearfix"></div> -->
 					</div>
+
 				</div>
+
 				<h2>خوش آمدید</h2>
 				<div class="welcome-grids">
 					<div class="col-md-3 welcome-grid wow fadeInRight animated" data-wow-delay=".5s">
@@ -402,7 +405,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<input class="contactInput" name="contactBtn" type="submit" value="ارسال">
 						</form>
 					</div>
-					<div class="clearfix"> </div>
+					<!-- <div class="clearfix"> </div> -->
 				</div>
 			</div>
 		</div>

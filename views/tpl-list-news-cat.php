@@ -143,7 +143,6 @@ use Hekmatinasser\Verta\Verta; ?>
         $("button.editNewsCatBtn").click(function() {
             $('#modalEditMenu').fadeIn(1000);
             newsCat_id = $(this).attr("data-newsId");
-            // alert(newsCat_id);
             $.ajax({
                 type: "post",
                 url: "process/ajaxHandler.php",

@@ -137,3 +137,19 @@ if ($_POST['action'] == 'deleteMassage') {
 if ($_POST['action'] == 'toggleStatusMassage') {
     echo toggleStatusMassage($_POST['massageId']) ?? 'لطفا مجددا تلاش کنید!!!';
 }
+
+
+// delete widgets
+if ($_POST['action'] == 'deleteWidget') {
+    echo deleteWidgets($_POST['widgetId']) ?? 'لطفا مجددا تلاش کنید!!!';
+}
+
+// toggle status widget
+if ($_POST['action'] == 'toggleStatusWidget') {
+    echo toggleStatusWidget($_POST['widgetId']) ?? 'لطفا مجددا تلاش کنید!!!';
+}
+
+// edit widget
+if ($_POST['action'] == 'editWidget') {
+    echo json_encode(getWidgets(null , $_POST['widgetId'])[0]);
+}

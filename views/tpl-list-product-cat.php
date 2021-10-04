@@ -143,7 +143,6 @@ use Hekmatinasser\Verta\Verta; ?>
         $("button.editProductCatBtn").click(function() {
             $('#modalEditMenu').fadeIn(1000);
             productCat_id = $(this).attr("data-productId");
-            // alert(productCat_id);
             $.ajax({
                 type: "post",
                 url: "process/ajaxHandler.php",
@@ -153,7 +152,6 @@ use Hekmatinasser\Verta\Verta; ?>
                 },
                 dataType: 'json',
                 success: function(response) {
-                    console.log(response);
                     $("input[name='productName']").val(response['title']);
                     $("input[name='productSort']").val(response['sort']);
                     if (response['status'] == 0) {

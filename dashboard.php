@@ -14,6 +14,9 @@ $productsCat     = getProductsCat();
 // get product
 $showProducts = getProducts();
 
+// get widgets
+$showWidgets = getWidgets();
+
 
 // get menus 
 $menus = getMenus();
@@ -36,6 +39,25 @@ $preViewContacts = contacts(4, null, 0);
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['addCallInfoBtn'])) {
         addCallInfo($_POST) ? header("Location:dashboard.php?p=add-call-us&add-callInfo=1") : header("Location:dashboard.php?p=add-call-us&add-callInfo=0");
+    }
+}
+
+// add widget 
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (isset($_POST['addWidgetBtn'])) {
+        if (!isset($_FILES['file']) or $_FILES['file']['error'] == UPLOAD_ERR_NO_FILE) {
+            header("Location:dashboard.php?p=add-widget&add-widget=0");
+        }
+        $imagePath = upload($_FILES);
+        if ($imagePath['bool']) {
+            if (addWidget($_POST, $imagePath['text'])) {
+                header("Location:dashboard.php?p=add-widget&add-widget=1");
+            } else {
+                header("Location:dashboard.php?p=add-widget&add-widget=0");
+            }
+        } else {
+            header("Location:dashboard.php?p=add-widget&add-widget=0");
+        }
     }
 }
 
@@ -118,6 +140,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 }
+
+// update a widget 
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (isset($_POST['editWidgetBtn'])) {
+        if (!isset($_FILES['file']) or $_FILES['file']['error'] == UPLOAD_ERR_NO_FILE) {
+            echo (updateWidget($_POST, null)) ? header("Location:dashboard.php?p=list-widget&update-widget=1") : header("Location:dashboard.php?p=list-widget&update-widget=0");
+        } else {
+            $imagePath = upload($_FILES);
+            if ($imagePath['bool']) {
+                if (updateWidget($_POST, $imagePath['text'])) {
+                    header("Location:dashboard.php?p=list-widget&update-widget=1");
+                } else {
+                    header("Location:dashboard.php?p=list-widget&update-widget=0");
+                }
+            } else {
+                header("Location:dashboard.php?p=list-widget&update-widget=0");
+            }
+        }
+    }
+}
+
 
 // add news category'
 

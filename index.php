@@ -13,6 +13,8 @@ $news = getNews(1, null);
 $callInfo = getCallInfo();
 
 
+$widgets = getWidgets(1, null);
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['contactBtn'])) {
         if (addContact($_POST)) {
