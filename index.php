@@ -16,6 +16,8 @@ $aboutUsVerified = getAboutUs(1, null);
 
 $widgets = getWidgets(1, null);
 
+$certificate = getCertificate();
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['contactBtn'])) {
         if (addContact($_POST)) {

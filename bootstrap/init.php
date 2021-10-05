@@ -17,3 +17,4 @@ include ROOT_PATH . 'libs/lib-news.php';
 include ROOT_PATH . 'libs/lib-contacts.php';
 include ROOT_PATH . 'libs/lib-widget.php';
 include ROOT_PATH . 'libs/lib-aboutUs.php';
+include ROOT_PATH . 'libs/lib-certificate.php';

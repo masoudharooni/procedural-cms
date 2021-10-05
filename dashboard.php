@@ -113,7 +113,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 // add product
-
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['addProBtn'])) {
         if (!isset($_FILES['file']) or $_FILES['file']['error'] == UPLOAD_ERR_NO_FILE) {
@@ -222,6 +221,29 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 }
             } else {
                 header("Location:dashboard.php?p=list-news&update-news=0");
+            }
+        }
+    }
+}
+// get certificate
+$certificate = getCertificate();
+
+
+// update certificate
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (isset($_POST['certificateBtn'])) {
+        if (!isset($_FILES['file']) or $_FILES['file']['error'] == UPLOAD_ERR_NO_FILE) {
+            (updateCertificate($_POST, null)) ? header("Location:dashboard.php?p=add-certificate&add-certificate=1") : header("Location:dashboard.php?p=add-certificate&add-certificate=0");
+        } else {
+            $imageNews = upload($_FILES);
+            if ($imageNews['bool']) {
+                if (updateCertificate($_POST, $imageNews['text'])) {
+                    header("Location:dashboard.php?p=add-certificate&add-certificate=1");
+                } else {
+                    header("Location:dashboard.php?p=add-certificate&add-certificate=0");
+                }
+            } else {
+                header("Location:dashboard.php?p=add-certificate&add-certificate=0");
             }
         }
     }

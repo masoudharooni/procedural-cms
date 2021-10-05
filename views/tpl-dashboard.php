@@ -246,6 +246,17 @@ use Hekmatinasser\Verta\Verta; ?>
                         </ul>
                     </li>
 
+                    <li class="sub-menu">
+                        <a href="javascript:;" class="">
+                            <i class="icon-book"></i>
+                            <span>نمونه گواهینامه</span>
+                            <span class="arrow"></span>
+                        </a>
+                        <ul class="sub">
+                            <li><a class="" href="?p=add-certificate">افزودن</a></li>
+                        </ul>
+                    </li>
+
                     <li>
                         <a onclick="return confirm('مطمئن هستید؟');" class="" href="adm-auth.php">
                             <i class="icon-user"></i>

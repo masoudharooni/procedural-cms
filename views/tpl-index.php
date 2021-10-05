@@ -340,14 +340,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 		<div class="testimonials-section">
 			<div class="container">
-				<h3>گواهی نامه</h3>
+				<h3>نمونه گواهی نامه</h3>
 				<div class="testimonials-grids">
 					<div class="col-md-2 testimonials-grid1 wow fadeInLeft animated" data-wow-delay=".5s">
-						<img src="assets/img/t1.png" class="img-responsive" alt="" />
+						<a href="<?= BASE_URL . $certificate['imagePath'] ?>"><img src="<?= $certificate['imagePath'] ?>" class="img-responsive" alt="عکسی که برای گواهینامه آپلود شده برای شما لود نشد ، مجددا تلاش کنید !" /></a>
 					</div>
-					<div class="col-md-10 testimonials-grid wow fadeInRight animated" data-wow-delay=".5s">
-						<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد</p>
-						<h5>ایمان مدائنی</h5>
+					<div class="col-md-10 testimonials-grid wow fadeInRight animated certificateBox" data-wow-delay=".5s">
+						<p class="certificateDesc"><?= $certificate['description'] ?></p>
+						<h5><?= $certificate['title'] ?></h5>
 					</div>
 					<div class="clearfix"></div>
 				</div>
