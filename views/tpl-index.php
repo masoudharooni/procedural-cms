@@ -72,6 +72,142 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			height: 100px;
 		}
 
+		.navbar-default .navbar-nav>li>a:hover,
+		.navbar-default .navbar-nav>li>a:focus {
+			color: #fff;
+			background-color: <?= $settings->color ?>;
+		}
+
+		.navbar-default .navbar-nav>.active>a,
+		.navbar-default .navbar-nav>.active>a:hover,
+		.navbar-default .navbar-nav>.active>a:focus {
+			color: #fff;
+			background-color: <?= $settings->color ?>;
+		}
+
+		.navbar-default .navbar-nav>.open>a,
+		.navbar-default .navbar-nav>.open>a:hover,
+		.navbar-default .navbar-nav>.open>a:focus {
+			color: #fff;
+			background-color: <?= $settings->color ?>;
+		}
+
+		.new-grid1 i {
+			font-size: 1.2em;
+			color: <?= $settings->color ?>;
+			margin-left: 1em;
+			vertical-align: text-top;
+		}
+
+		.teal:before {
+			background: <?= $settings->color ?>88;
+		}
+
+		.history-grid .icon {
+			width: 100px;
+			height: 100px;
+			border-radius: 50%;
+			-webkit-border-radius: 50%;
+			-moz-border-radius: 50%;
+			-o-border-radius: 50%;
+			background: <?= $settings->color ?>;
+			margin: 0 auto;
+			text-align: center;
+			position: relative;
+		}
+
+		.banner-grid h4 {
+			font-size: 1.6em;
+			color: #fff;
+			background: <?= $settings->color ?>;
+			padding: .5em 0;
+			font-weight: 600;
+		}
+
+		.welcome-icon {
+			position: absolute;
+			width: 22%;
+			top: -3em;
+			right: 8em;
+			background: <?= $settings->color ?>;
+			padding: .8em .8em;
+			border-radius: 40px;
+		}
+
+		.product-left {
+			float: left;
+			width: 50%;
+			background: <?= $settings->color ?>;
+			padding: 20px 10px;
+			transition: 0.5s all;
+			-webkit-transition: 0.5s all;
+			-moz-transition: 0.5s all;
+			-o-transition: 0.5s all;
+			-ms-transition: 0.5s all;
+		}
+
+		.product1-right {
+			float: right;
+			width: 50%;
+			background: <?= $settings->color ?>;
+			padding: 3em 2em 2.4em;
+			transition: 0.5s all;
+			-webkit-transition: 0.5s all;
+			-moz-transition: 0.5s all;
+			-o-transition: 0.5s all;
+			-ms-transition: 0.5s all;
+		}
+
+		.footer-section {
+			background: <?= $settings->color ?>;
+			padding: 5em 0;
+		}
+
+		.team {
+			padding: 5em 0em;
+			background: <?= $settings->color ?>;
+		}
+
+		.services-right p {
+			background: <?= $settings->color ?>;
+			color: #ffffff;
+			font-size: 20px;
+			text-align: center;
+			padding: 12px;
+			margin: 0;
+			border-radius: 60%;
+		}
+
+		.dropdown-menu>li>a:hover {
+			color: #fff;
+			text-decoration: none;
+			background-color: <?= $settings->color ?>;
+		}
+
+		.head-bottom {
+			background: <?= $settings->color ?>;
+			padding: 1em 0;
+			border-radius: 5px 5px 0px 0px;
+			-webkit-border-radius: 5px 5px 0px 0px;
+			-o-border-radius: 5px 5px 0px 0px;
+			-ms-border-radius: 5px 5px 0px 0px;
+			-moz-border-radius: 5px 5px 0px 0px;
+		}
+
+		.mail-right input[type="submit"]:hover {
+			background: <?= $settings->color ?>;
+		}
+
+		.navbar-default .navbar-nav .open .dropdown-menu>li>a:hover,
+		.navbar-default .navbar-nav .open .dropdown-menu>li>a:focus {
+			color: #fff;
+			background-color: <?= $settings->color ?>;
+		}
+
+		a.button:hover {
+			background: <?= $settings->color ?>;
+		}
+
 		.view {
 			float: right;
 		}
@@ -120,9 +256,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 		.dropdown {
 			position: absolute;
-			background: #17c2a4;
 			width: 100%;
 			color: #fff;
+			background: <?= $settings->color ?>;
 			text-align: center;
 			font-size: 17px;
 			display: none;
@@ -132,8 +268,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			padding: 10px;
 		}
 
-		.dropdown li:hover {
-			background-color: #007561;
+		.dropdown:hover {
+			background: <?= $settings->color ?>;
 			cursor: pointer;
 		}
 
@@ -141,14 +277,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			display: block;
 		}
 
-		.dropDownLink {
-			border-bottom: 5px solid rgba(0, 0, 0, 0);
-		}
-
 		.dropDownLink:hover {
 			text-decoration: none;
 			color: inherit;
-			border-bottom: 5px solid red;
 		}
 
 		.banner {
@@ -188,7 +319,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!---header--->
 	<div class="header-section">
 		<div class="container">
-			<div class="head-bottom colorBase">
+			<div class="head-bottom">
 				<div class="logo  wow fadeInDownBig animated animated" data-wow-delay="0.4s">
 					<h1><a href="<?= BASE_URL ?>"><?= $settings->companyName ?><span><?= $settings->companyDesc ?></span></a></h1>
 				</div>
@@ -226,7 +357,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 												if (!is_null($getMenuByParentId)) {
 													foreach ($getMenuByParentId as $menuParent) :
 												?>
-														<li><a class="dropDownLink" href="<?= $menuParent['url'] ?>"><?= $menuParent['title'] ?></a></li>
+														<li class="insideDropdown"><a class="dropDownLink" href="<?= $menuParent['url'] ?>"><?= $menuParent['title'] ?></a></li>
 												<?php endforeach;
 												} else {
 													echo "<span style='line-height:30px;'>زیر منو اضافه کنید.</span>";
@@ -340,7 +471,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="col-md-4 new-grid">
 								<div id="box" class="burst-circle teal">
 									<img src="<?= $value['imagePath'] ?>" alt="عکس خبر لود نشد!" class="img-responsive" />
-									<a style="cursor: pointer;" href="<?= BASE_URL . $value['imagePath'] ?>">
+									<a class="colorBase" style="cursor: pointer;" href="<?= BASE_URL . $value['imagePath'] ?>">
 										<h4><?= 'در دسته بندی : ' . getNewsCat(null, $value['category'])[0]['title'] ?></h4>
 									</a>
 								</div>
@@ -500,14 +631,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>
 	</div>
 
+
 	<!-- set color base for website -->
 	<script>
 		$('.color').css("color", "<?= $settings->color ?>");
 	</script>
-
-
-
 </body>
-
 
 </html>

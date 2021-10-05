@@ -33,15 +33,7 @@ body {
     background: #e4e4e4;
 }
 
-.head-bottom {
-    background: #17c2a4;
-    padding: 1em 0;
-    border-radius: 5px 5px 0px 0px;
-    -webkit-border-radius: 5px 5px 0px 0px;
-    -o-border-radius: 5px 5px 0px 0px;
-    -ms-border-radius: 5px 5px 0px 0px;
-    -moz-border-radius: 5px 5px 0px 0px;
-}
+
 
 .logo {
     text-align: center;
@@ -96,20 +88,11 @@ body {
     font-family: 'sahel', 'Ubuntu Condensed', sans-serif;
 }
 
-.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
-    color: #fff;
-    background-color: #17c2a4;
-}
 
-.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
-    color: #fff;
-    background-color: #17c2a4;
-}
 
-.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus {
-    color: #fff;
-    background-color: #17c2a4;
-}
+
+
+
 
 .navbar-nav>li>.dropdown-menu {
     margin-top: 0;
@@ -151,11 +134,6 @@ body {
     box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
 }
 
-.dropdown-menu>li>a:hover {
-    color: #fff;
-    text-decoration: none;
-    background-color: #17c2a4;
-}
 
 .banner-center {
     text-align: center;
@@ -175,13 +153,7 @@ body {
     text-align: center;
 }
 
-.banner-grid h4 {
-    font-size: 1.6em;
-    color: #fff;
-    background: #17c2a4;
-    padding: .5em 0;
-    font-weight: 600;
-}
+
 
 .banner-grids {
     position: absolute;
@@ -213,9 +185,7 @@ a.button {
     margin-top: 1em;
 }
 
-a.button:hover {
-    background: #17c2a4;
-}
+
 
 /* Wobble Bottom */
 
@@ -385,7 +355,6 @@ a.button:hover {
     font-size: 4em;
     text-align: center;
     font-family: 'sahel', 'Ubuntu Condensed', sans-serif;
-    color: #17c2a4;
     text-transform: capitalize;
 }
 
@@ -395,15 +364,7 @@ a.button:hover {
     margin-top: 3em;
 }
 
-.welcome-icon {
-    position: absolute;
-    width: 22%;
-    top: -3em;
-    right: 8em;
-    background: #17c2a4;
-    padding: .8em .8em;
-    border-radius: 40px;
-}
+
 
 .welcome-text {
     background: #fff;
@@ -476,7 +437,6 @@ a.button:hover {
     font-size: 3.5em;
     text-align: center;
     font-family: 'sahel', 'Ubuntu Condensed', sans-serif;
-    color: #17c2a4;
     text-transform: capitalize;
 }
 
@@ -486,29 +446,9 @@ a.button:hover {
     overflow: hidden;
 }
 
-.product-left {
-    float: left;
-    width: 50%;
-    background: #17c2a4;
-    padding: 20px 10px;
-    transition: 0.5s all;
-    -webkit-transition: 0.5s all;
-    -moz-transition: 0.5s all;
-    -o-transition: 0.5s all;
-    -ms-transition: 0.5s all;
-}
 
-.product1-right {
-    float: right;
-    width: 50%;
-    background: #17c2a4;
-    padding: 3em 2em 2.4em;
-    transition: 0.5s all;
-    -webkit-transition: 0.5s all;
-    -moz-transition: 0.5s all;
-    -o-transition: 0.5s all;
-    -ms-transition: 0.5s all;
-}
+
+
 
 .product1-left {
     float: left;
@@ -575,12 +515,7 @@ a.button:hover {
     margin-top: 3em;
 }
 
-.new-grid1 i {
-    font-size: 1.2em;
-    color: #17c2a4;
-    margin-left: 1em;
-    vertical-align: text-top;
-}
+
 
 .new-grid1 h5 {
     font-size: 1.1em;
@@ -646,9 +581,7 @@ a.button:hover {
     transition: all 500ms ease-in;
 }
 
-.teal:before {
-    background: rgba(23, 194, 164, 0.67);
-}
+
 
 .burst-circle:hover:before {
     -webkit-transform: scale(1.5, 1.5);
@@ -835,10 +768,7 @@ a.button:hover {
     margin-top: 1.5em;
 }
 
-.footer-section {
-    background: #17c2a4;
-    padding: 5em 0;
-}
+
 
 .footer-grid ul li :hover {
     color: #313131;
@@ -970,10 +900,7 @@ a.button:hover {
     position: relative;
 }
 
-.team {
-    padding: 5em 0em;
-    background: #17c2a4;
-}
+
 
 .team h3 {
     color: #fff;
@@ -1071,18 +998,7 @@ figure.icon i {
     background: #eee;
 }
 
-.history-grid .icon {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -o-border-radius: 50%;
-    background: #17c2a4;
-    margin: 0 auto;
-    text-align: center;
-    position: relative;
-}
+
 
 .history-grid.icon img {
     position: relative;
@@ -1146,7 +1062,6 @@ a.btn.btn-primary.btn-lg.see-button.hvr-shutter-out-horizontal {
 .history-grid h6 {
     font-size: 1.6em;
     line-height: 1.8em;
-    color: #17c2a4;
     font-weight: 600;
 }
 
@@ -1180,9 +1095,6 @@ a.btn.btn-primary.btn-lg.see-button.hvr-shutter-out-horizontal {
     font-size: 1em;
 }
 
-.ser-grid ul li:hover {
-    color: #17C2A4;
-}
 
 .services-grids, .overview-grids {
     margin-top: 3em;
@@ -1230,15 +1142,7 @@ a.btn.btn-primary.btn-lg.see-button.hvr-shutter-out-horizontal {
     margin-top: 3em;
 }
 
-.services-right p {
-    background: #17c2a4;
-    color: #ffffff;
-    font-size: 20px;
-    text-align: center;
-    padding: 12px;
-    margin: 0;
-    border-radius: 60%;
-}
+
 
 .services-left h4 {
     font-size: 1.6em;
@@ -1273,7 +1177,6 @@ a.btn.btn-primary.btn-lg.see-button.hvr-shutter-out-horizontal {
     right: 0;
     -webkit-transform: scale(0);
     transform: scale(0);
-    background-color: rgba(23, 194, 164, 0.59);
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
@@ -1456,12 +1359,7 @@ figure.effect-oscar:hover img {
     padding: 2em 0;
 }
 
-h3.ghj {
-    font-size: 2em;
-    margin: 0 0 1em 0;
-    color: #17c2a4;
-    font-family: 'sahel', 'Ubuntu Condensed', sans-serif;
-}
+
 
 .pages-top {
     text-align: center;
@@ -1587,9 +1485,7 @@ h3.ghj {
     -moz-transition: .5s ease-in;
 }
 
-.mail-right input[type="submit"]:hover {
-    background: #17c2a4;
-}
+
 
 .map iframe {
     width: 100%;
@@ -1947,10 +1843,7 @@ h3.ghj {
         text-align: center;
         font-size: 1.3em;
     }
-    .navbar-default .navbar-nav .open .dropdown-menu>li>a:hover, .navbar-default .navbar-nav .open .dropdown-menu>li>a:focus {
-        color: #fff;
-        background-color: #17c2a4;
-    }
+    
     .navbar-default .navbar-collapse, .navbar-default .navbar-form {
         border-color: #C9C9BF;
         text-align: center;
