@@ -34,6 +34,18 @@ $allContacts = contacts();
 $preViewContacts = contacts(4, null, 0);
 
 
+// get about us
+$allAboutUs = getAboutUs();
+
+
+// add about us
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (isset($_POST['addAboutUsBtn'])) {
+        addAboutUs($_POST) ? header("Location:dashboard.php?p=add-about-us&add-about-us=1") : header("Location:dashboard.php?p=add-about-us&add-about-us=0");
+    }
+}
+
+
 
 // add call us info 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {

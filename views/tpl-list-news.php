@@ -12,7 +12,6 @@ use Hekmatinasser\Verta\Verta; ?>
                 <tr>
                     <th>عنوان</th>
                     <th>دسته بندی</th>
-                    <th>توضیحات</th>
                     <th>تاریخ ثبت</th>
                     <th>ترتیب نمایش </th>
                     <th>عکس</th>
@@ -28,7 +27,6 @@ use Hekmatinasser\Verta\Verta; ?>
                         <tr>
                             <td><?= $value['title'] ?></td>
                             <td><?= getNewsCat(null, $value['category'])[0]['title']; ?></td>
-                            <td style="line-height: 33px;"><?= $value['description'] ?></td>
 
                             <td>
                                 <?php

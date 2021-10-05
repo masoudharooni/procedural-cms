@@ -12,6 +12,7 @@ $news = getNews(1, null);
 // get call info 
 $callInfo = getCallInfo();
 
+$aboutUsVerified = getAboutUs(1, null);
 
 $widgets = getWidgets(1, null);
 

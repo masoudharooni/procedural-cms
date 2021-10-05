@@ -68,6 +68,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<link rel="stylesheet" type="text/css" href="assets/css/style9.css" />
 
 	<style>
+		p.aboutUsDescription {
+			overflow: scroll;
+			height: 100px;
+		}
+
 		.view {
 			float: right;
 		}
@@ -80,6 +85,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		}
 
 		p.widgetDescription::-webkit-scrollbar {
+			width: 0px;
+		}
+
+		p.aboutUsDescription::-webkit-scrollbar {
 			width: 0px;
 		}
 
@@ -151,14 +160,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="container">
 			<div class="head-bottom">
 				<div class="logo  wow fadeInDownBig animated animated" data-wow-delay="0.4s">
-					<h1><a href="index.html">Agrox<span>Farming company</span></a></h1>
+					<h1><a href="<?= BASE_URL ?>">Agrox<span>Farming company</span></a></h1>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!---header--->
-	<!--ترجمه شده توسط مرجع تخصصی برنامه نویسان-->
-	<!---banner--->
+
 	<div class="banner">
 		<div class="container">
 			<nav class="navbar navbar-default">
@@ -244,50 +251,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 				</div>
 
-				<h2>خوش آمدید</h2>
+				<h2>درباره ی ما</h2>
 				<div class="welcome-grids">
-					<div class="col-md-3 welcome-grid wow fadeInRight animated" data-wow-delay=".5s">
-						<div class="welcome-text">
-							<h4>ایپسوم </h4>
-							<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</p>
-						</div>
-						<div class="welcome-icon">
-							<img src="assets/img/i1.png">
-						</div>
-					</div>
-					<div class="col-md-3 welcome-grid wow fadeInDownBig animated" data-wow-delay=".5s">
-						<div class="welcome-text">
-							<h4>
-
-								لورم ایپسوم </h4>
-							<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</p>
-						</div>
-						<div class="welcome-icon">
-							<img src="assets/img/i2.png">
-						</div>
-					</div>
-					<div class="col-md-3 welcome-grid wow fadeInUpBig animated" data-wow-delay=".5s">
-						<div class="welcome-text">
-							<h4>
-
-								لورم ایپسوم </h4>
-							<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</p>
-						</div>
-						<div class="welcome-icon">
-							<img src="assets/img/i3.png">
-						</div>
-					</div>
-					<div class="col-md-3 welcome-grid wow fadeInLeft animated" data-wow-delay=".5s">
-						<div class="welcome-text">
-							<h4>
-
-								لورم ایپسوم </h4>
-							<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</p>
-						</div>
-						<div class="welcome-icon">
-							<img src="assets/img/i4.png">
-						</div>
-					</div>
+					<?php if (!is_null($aboutUsVerified)) {
+						foreach ($aboutUsVerified as $value) :
+					?>
+							<div class="col-md-3 welcome-grid wow fadeInRight animated" data-wow-delay=".5s">
+								<div class="welcome-text">
+									<h4 style="position: relative;bottom: 20px;"><?= $value['title'] ?></h4>
+									<p class="aboutUsDescription">
+										<?= $value['description'] ?>
+									</p>
+								</div>
+							</div>
+					<?php endforeach;
+					} ?>
 					<div class="clearfix"></div>
 				</div>
 			</div>
@@ -463,13 +441,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<div class="col-md-3 footer-grid wow fadeInLeft animated" data-wow-delay=".5s">
 					<h4>تماس با ما</h4>
-					<p>تهران-شریعتی</p>
-					<p>خ ملک کوچه ایرانیاد</p>
-					<p>تلفن رایگان: +1 900 448 9990</p>
-					<p>
-						تلفن: +1 459 503 7035</p>
-					<p>فکس: + 1 304 789 7898</p>
-					<a href="mailto:example@mail.com"> example@mail.com</a>
+					<p><?= $callInfo['address'] ?></p>
+					<a href="tel:<?= $callInfo['phone'] ?>">
+						<p>تلفن رایگان: <?= $callInfo['phone'] ?></p>
+					</a>
+					<a href="tel:<?= $callInfo['phone'] ?>">
+						<p>تلفن: <?= $callInfo['phone'] ?></p>
+					</a>
+					<a href="mailto:<?= $callInfo['email'] ?>"> :<?= $callInfo['email'] ?></a>
 				</div>
 				<div class="clearfix"></div>
 			</div>

@@ -151,5 +151,31 @@ if ($_POST['action'] == 'toggleStatusWidget') {
 
 // edit widget
 if ($_POST['action'] == 'editWidget') {
-    echo json_encode(getWidgets(null , $_POST['widgetId'])[0]);
+    echo json_encode(getWidgets(null, $_POST['widgetId'])[0]);
+}
+
+// delete about us 
+if ($_POST['action'] == 'deleteAboutUs') {
+    echo deleteAboutUs($_POST['aboutId']) ?? 'لطفا مجددا تلاش کنید!!!';
+}
+
+// toggle status about us
+if ($_POST['action'] == 'toggleStatusAboutUs') {
+    echo toggleStatusAboutUs($_POST['aboutId']) ?? 'لطفا مجددا تلاش کنید!!!';
+}
+
+// edit about us
+if ($_POST['action'] == 'editAboutUs') {
+    echo json_encode(getAboutUs(null, $_POST['aboutId'])[0]);
+}
+if ($_POST['action'] == 'editAboutData') {
+    $expload = explode('&', $_POST['data']);
+    $data = (object)[
+        'aboutName' => explode('=', $expload[0])[1],
+        'aboutSort' => explode('=', $expload[1])[1],
+        'aboutStatus' => explode('=', $expload[2])[1],
+        'aboutDesc' => explode('=', $expload[3])[1]
+    ];
+    echo updateAboutUs($data, $_POST['id']) ?? false;
+    // var_dump($data);
 }
