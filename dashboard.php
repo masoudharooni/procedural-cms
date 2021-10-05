@@ -37,6 +37,9 @@ $preViewContacts = contacts(4, null, 0);
 // get about us
 $allAboutUs = getAboutUs();
 
+// get settings
+$settings = getSettings();
+
 
 // add about us
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -249,5 +252,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 
+
+// update settings
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (isset($_POST['updateSettingBtn'])) {
+        if (!isset($_FILES['file']) or $_FILES['file']['error'] == UPLOAD_ERR_NO_FILE) {
+            (updateSettings($_POST, null)) ? header("Location:dashboard.php?p=add-settings&add-settings=1") : header("Location:dashboard.php?p=add-settings&add-settings=0");
+        } else {
+            $imageNews = upload($_FILES);
+            if ($imageNews['bool']) {
+                if (updateSettings($_POST, $imageNews['text'])) {
+                    header("Location:dashboard.php?p=add-settings&add-settings=1");
+                } else {
+                    header("Location:dashboard.php?p=add-settings&add-settings=0");
+                }
+            } else {
+                header("Location:dashboard.php?p=add-settings&add-settings=0");
+            }
+        }
+    }
+}
 
 include ROOT_PATH . 'views/tpl-dashboard.php';

@@ -151,17 +151,10 @@ body {
     box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
 }
 
-.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
+.dropdown-menu>li>a:hover {
     color: #fff;
     text-decoration: none;
     background-color: #17c2a4;
-}
-
-.banner {
-    background: url('../img/ba2.jpg') no-repeat 0px 0px;
-    background-size: cover;
-    min-height: 710px;
-    padding-bottom: 2em;
 }
 
 .banner-center {
@@ -2047,11 +2040,6 @@ h3.ghj {
     .footer-grid:nth-child(3), .footer-grid:nth-child(4) {
         margin-top: 2em;
     }
-    .banner1 {
-        min-height: 50px !important;
-        background: url('../img/ba2.jpg') no-repeat 0px 0px;
-        background-size: cover;
-    }
     .view {
         width: 150px;
         height: 117px;
@@ -2244,15 +2232,6 @@ h3.ghj {
         }
         .banner-grids {
             bottom: 0.3em;
-        }
-        .banner {
-            background: url('../img/ba2.jpg') no-repeat -299px 0px;
-            background-size: cover;
-        }
-        .banner1 {
-            min-height: 50px !important;
-            background: url('../img/ba2.jpg') no-repeat 0px 0px;
-            background-size: cover;
         }
         .view {
             width: 355px;
@@ -2697,4 +2676,4 @@ h3.ghj {
             margin-top: 1em;
         }
     }
-        /**responsive**/
+    /**responsive**/

@@ -139,7 +139,7 @@ use Hekmatinasser\Verta\Verta; ?>
                         </a>
                         <ul class="dropdown-menu extended logout">
                             <div class="log-arrow-up"></div>
-                            <li><a href="#"><i class="icon-cog"></i> تنظیمات</a></li>
+                            <li><a href="dashboard.php?p=add-settings"><i class="icon-cog"></i> تنظیمات</a></li>
                             <li style="float: left;"><a href="dashboard.php?p=list-contacts"><i class="icon-envelope-alt"></i>پیام های شما</a></li>
                             <li><a onclick="return confirm('آیا از خــــروج خــــــود اطمینان دارید؟');" href="?logout=1"><i class="icon-key"></i> خروج</a></li>
                         </ul>

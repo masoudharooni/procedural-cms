@@ -52,7 +52,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<script src="assets/js/bootstrap.js"></script>
 	<!---js--->
 	<!--JS for animate-->
-	<!--ترجمه شده توسط مرجع تخصصی برنامه نویسان-->
 	<link href="assets/css/animate.css" rel="stylesheet" type="text/css" media="all">
 	<script src="assets/js/wow.min.js"></script>
 	<script>
@@ -151,6 +150,37 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			color: inherit;
 			border-bottom: 5px solid red;
 		}
+
+		.banner {
+			background: url('<?= $settings->imgPage ?>') no-repeat 0px 0px;
+			background-size: cover;
+			min-height: 710px;
+			padding-bottom: 2em;
+		}
+
+		.banner1 {
+			min-height: 50px !important;
+			background: url('<?= $settings->imgPage ?>') no-repeat 0px 0px;
+			background-size: cover;
+		}
+
+		.banner {
+			background: url('<?= $settings->imgPage ?>') no-repeat -299px 0px;
+			background-size: cover;
+		}
+
+		.banner1 {
+			min-height: 50px !important;
+			background: url('<?= $settings->imgPage ?>') no-repeat 0px 0px;
+			background-size: cover;
+		}
+
+		.banner {
+			background: url('<?= $settings->imgPage ?>') no-repeat 0px 0px;
+			background-size: cover;
+			min-height: 710px;
+			padding-bottom: 2em;
+		}
 	</style>
 </head>
 
@@ -158,9 +188,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!---header--->
 	<div class="header-section">
 		<div class="container">
-			<div class="head-bottom">
+			<div class="head-bottom colorBase">
 				<div class="logo  wow fadeInDownBig animated animated" data-wow-delay="0.4s">
-					<h1><a href="<?= BASE_URL ?>">Agrox<span>Farming company</span></a></h1>
+					<h1><a href="<?= BASE_URL ?>"><?= $settings->companyName ?><span><?= $settings->companyDesc ?></span></a></h1>
 				</div>
 			</div>
 		</div>
@@ -182,14 +212,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav">
-							<li class="active"><a href="<?= $_SERVER['PHP_SELF'] ?>" class="wow fadeInDownBig" data-wow-delay=".1s">صفحه اصلی<span class="sr-only">(current)</span></a></li>
+							<li class="active"><a href="<?= $_SERVER['PHP_SELF'] ?>" class="wow fadeInDownBig liHover" data-wow-delay=".1s">صفحه اصلی<span class="sr-only"></span></a></li>
 							<?php
 							if (!is_null($menus)) {
 								foreach ($menus as $menu) :
 									if ($menu['parentId'] == 0) {
 
 							?>
-										<li class="dropDownContainer"><a href="<?= $menu['url'] ?>" class="wow fadeInDownBig" data-wow-delay=".2s"><?= $menu['title'] ?></a>
+										<li class="dropDownContainer"><a href="<?= $menu['url'] ?>" class="wow fadeInDownBig aHover" data-wow-delay=".2s"><?= $menu['title'] ?></a>
 											<ul class="dropdown">
 												<?php
 												$getMenuByParentId = getMenusByParentId($menu['id']);
@@ -212,14 +242,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</nav>
 			<div class="banner-center">
 				<marquee>
-					<h3>بهترین مزرعه کشاورزی</h3>
+					<h3><?= $settings->titlePage ?></h3>
 				</marquee>
 			</div>
 
 		</div>
 	</div>
 	<!---banner-->
-	<!--ترجمه شده توسط مرجع تخصصی برنامه نویسان-->
 	<!---welcome-->
 	<div class="content">
 		<div class="welcome-section">
@@ -231,7 +260,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							foreach ($widgets as $value) :
 						?>
 								<div class="col-md-4 banner-grid wow fadeInRight animated" data-wow-delay=".5s">
-									<h4><?= $value['title'] ?></h4>
+									<h4 class="colorBase"><?= $value['title'] ?></h4>
 									<div class="ban1">
 										<div class="ban-images  view fourth-effect">
 											<a href="<?= BASE_URL . $value['imagePath'] ?>"><img src="<?= $value['imagePath'] ?>" class="img-responsive" alt="عکس ویجت مورد نظر شما لود نشد." /></a>
@@ -251,7 +280,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 				</div>
 
-				<h2>درباره ی ما</h2>
+				<h2 class="color">درباره ی ما</h2>
 				<div class="welcome-grids">
 					<?php if (!is_null($aboutUsVerified)) {
 						foreach ($aboutUsVerified as $value) :
@@ -272,7 +301,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 		<div class="product-section">
 			<div class="container">
-				<h3>محصولات محبوب</h3>
+				<h3 class="color">محصولات محبوب</h3>
 
 				<div class="product-grids">
 					<?php
@@ -283,7 +312,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<div class="product-right">
 									<a href="<?= BASE_URL . $value['imagePath'] ?>"><img src="<?= $value['imagePath'] ?>" class="img-responsive proImage" alt="عکس محصول لود نشد!" width="300px" height="200px"></a>
 								</div>
-								<div class="product-left">
+								<div class="product-left colorBase">
 									<h4><?= $value['title'] ?></h4>
 									<p><?= $value['description'] ?></p>
 								</div>
@@ -297,11 +326,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 		</div>
 		<!---product-->
-		<!--ترجمه شده توسط مرجع تخصصی برنامه نویسان-->
+
 		<!---news--->
 		<div class="news-section">
 			<div class="container">
-				<h3>آخرین اخبار</h3>
+				<h3 class="color">آخرین اخبار</h3>
 
 				<?php
 				if (!is_null($news)) {
@@ -340,7 +369,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 		<div class="testimonials-section">
 			<div class="container">
-				<h3>نمونه گواهی نامه</h3>
+				<h3 class="color">نمونه گواهی نامه</h3>
 				<div class="testimonials-grids">
 					<div class="col-md-2 testimonials-grid1 wow fadeInLeft animated" data-wow-delay=".5s">
 						<a href="<?= BASE_URL . $certificate['imagePath'] ?>"><img src="<?= $certificate['imagePath'] ?>" class="img-responsive" alt="عکسی که برای گواهینامه آپلود شده برای شما لود نشد ، مجددا تلاش کنید !" /></a>
@@ -357,7 +386,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 		<div class="mail" style="border-top: 1px solid #000;border-bottom:1px solid #000;padding-top:10px">
 			<div class="container">
-				<h2>تماس با ما</h2>
+				<h2 class="color">تماس با ما</h2>
 				<div class="mail-grids">
 					<div class="col-md-6 mail-right wow fadeInLeft animated" data-wow-delay=".5s">
 						<h4>اطلاعات تماس</h4>
@@ -380,7 +409,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<input class="contactInput" name="contactSubject" type="text" placeholder="موضوع" required>
 							<textarea name="contactDescription" class="contactInput" placeholder="
 نوع متن خود را در اینجا ...."></textarea>
-							<input class="contactInput" name="contactBtn" type="submit" value="ارسال">
+							<input class="contactInput hoverInput" name="contactBtn" type="submit" value="ارسال">
 						</form>
 					</div>
 					<!-- <div class="clearfix"> </div> -->
@@ -390,7 +419,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 	</div>
 	<!---footer--->
-	<div class="footer-section">
+	<div class="footer-section colorBase">
 		<div class="container">
 			<div class="footer-grids">
 				<div class="col-md-3 footer-grid wow fadeInLeft animated" data-wow-delay=".5s">
@@ -455,21 +484,30 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 	</div>
 	<!---footer--->
-	<!--ترجمه شده توسط مرجع تخصصی برنامه نویسان-->
+
 	<!--copy-->
 	<div class="copy-section wow fadeInLeft animated" data-wow-delay=".5s"">
 		<div class=" container">
 		<div class="social-icons">
-			<a href="#"><i class="icon"></i></a>
-			<a href="#"><i class="icon1"></i></a>
-			<a href="#"><i class="icon2"></i></a>
-			<a href="#"><i class="icon3"></i></a>
+			<?php if (!is_null($settings->facebook) and $settings->facebook != '') { ?><a href="<?= $settings->facebook ?>"><i class="icon"></i></a><?php } ?>
+			<?php if (!is_null($settings->twitter)  and $settings->twitter != '') { ?><a href="<?= $settings->twitter ?>"><i class="icon1"></i></a><?php } ?>
+			<?php if (!is_null($settings->google)  and $settings->google != '') { ?><a href="<?= $settings->google ?>"><i class="icon2"></i></a><?php } ?>
+			<?php if (!is_null($settings->instagram)  and $settings->instagram != '') { ?><a href="<?= $settings->instagram ?>"><i class="icon3"></i></a><?php } ?>
 		</div>
-		<p>کلیه حقوق مادی و معنوی برای مجموعه برنامه نویسان محفوظ می باشد <a href="http://barnamenevisan.org/">برنامه نویسان</a></p>
+		<a href="<?= BASE_URL ?>">
+			<p><?= $settings->copyRight ?></p>
+		</a>
 	</div>
 	</div>
-	<!--copy-->
+
+	<!-- set color base for website -->
+	<script>
+		$('.color').css("color", "<?= $settings->color ?>");
+	</script>
+
+
+
 </body>
-<!--ترجمه شده توسط مرجع تخصصی برنامه نویسان-->
+
 
 </html>

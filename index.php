@@ -16,6 +16,10 @@ $aboutUsVerified = getAboutUs(1, null);
 
 $widgets = getWidgets(1, null);
 
+// get settings
+$settings = getSettings();
+
+
 $certificate = getCertificate();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
