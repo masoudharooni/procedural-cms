@@ -4,7 +4,7 @@
 
 
 # 📝features for admin panel 📝
-- 📌 add menu with parent or not has parent and it can be a parent 😇
+ 📌 add menu with parent or not has parent and it can be a parent 😇
 - 📌 display list of menu , delete , edit , toggle status of menu 📜 ❌ 🖍 ✅
 - 📌 add products inside different category 🚚 🍱
 - 📌 display list of products , delete , edit , toggle status of product 📜 ❌ 🖍 ✅
