@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Redirect;
-
 include 'bootstrap/init.php';
 
 $menus = getMenus(1);

@@ -546,7 +546,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					<div class="col-md-6 mail-right wow fadeInRight animated" data-wow-delay=".5s">
 						<h4>ارسال پیام</h4>
-						<p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ </p>
 						<form id="contactUs" action="<?= $_SERVER['PHP_SELF'] ?>" method="POST">
 							<input class="contactInput" name="contactName" type="text" placeholder="نام" required>
 							<input class="contactInput" name="contactEmail" type="email" placeholder="ایمیل" required>
@@ -557,7 +556,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<input class="contactInput hoverInput" name="contactBtn" type="submit" value="ارسال">
 						</form>
 					</div>
-					<!-- <div class="clearfix"> </div> -->
 				</div>
 			</div>
 		</div>

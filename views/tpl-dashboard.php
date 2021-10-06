@@ -285,27 +285,15 @@ use Hekmatinasser\Verta\Verta; ?>
         <section id="main-content">
             <section class="wrapper">
 
-
-
-
-
                 <?php
                 if (isset($_GET['p'])) {
                     $page = $_GET['p'];
                     include  'views/tpl-' . $page . '.php';
                     // echo $page . '.php';
                 } else {
-                    echo 'صفحه ی اصلی';
+                    include "views/tpl-list-contacts.php";
                 }
                 ?>
-
-
-
-
-
-
-
-
 
 
             </section>
