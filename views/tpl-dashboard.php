@@ -257,10 +257,23 @@ use Hekmatinasser\Verta\Verta; ?>
                         </ul>
                     </li>
 
+                    <li class="sub-menu">
+                        <a href="javascript:;" class="">
+                            <i class="icon-book"></i>
+                            <span>مدیریت بخش فوتر</span>
+                            <span class="arrow"></span>
+                        </a>
+                        <ul class="sub">
+                            <li><a class="" href="?p=footer-about">درباره ما</a></li>
+                            <li><a class="" href="?p=footer-solution">راه حل ها</a></li>
+                            <li><a class="" href="?p=footer-work">کار ها</a></li>
+                        </ul>
+                    </li>
+
                     <li>
                         <a onclick="return confirm('مطمئن هستید؟');" class="" href="adm-auth.php">
                             <i class="icon-user"></i>
-                            <span>صفحه ورود به سایت</span>
+                            <span>صفحه ورود به پنل ادمین</span>
                         </a>
                     </li>
                 </ul>

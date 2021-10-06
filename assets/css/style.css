@@ -89,11 +89,6 @@ body {
 }
 
 
-
-
-
-
-
 .navbar-nav>li>.dropdown-menu {
     margin-top: 0;
     border-top-right-radius: 0;
@@ -385,23 +380,6 @@ a.button {
     -ms-transition: 0.5s all;
 }
 
-.welcome-grid:hover div.welcome-text {
-    border: 2px solid #313131;
-    transition: 0.5s all;
-    -webkit-transition: 0.5s all;
-    -o-transition: 0.5s all;
-    -moz-transition: 0.5s all;
-    -ms-transition: 0.5s all;
-}
-
-.welcome-grid:hover div.welcome-icon {
-    background: #313131;
-    transition: 0.5s all;
-    -webkit-transition: 0.5s all;
-    -o-transition: 0.5s all;
-    -moz-transition: 0.5s all;
-    -ms-transition: 0.5s all;
-}
 
 .welcome-text h4 {
     font-size: 1.6em;

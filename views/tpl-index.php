@@ -78,6 +78,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			background-color: <?= $settings->color ?>;
 		}
 
+		*::selection {
+			color: #fff;
+			background-color: <?= $settings->color ?>;
+		}
+
+		.welcome-grid:hover div.welcome-text {
+			border: 2px solid <?= $settings->color ?>;
+			transition: 0.5s all;
+			-webkit-transition: 0.5s all;
+			-o-transition: 0.5s all;
+			-moz-transition: 0.5s all;
+			-ms-transition: 0.5s all;
+		}
+
 		.navbar-default .navbar-nav>.active>a,
 		.navbar-default .navbar-nav>.active>a:hover,
 		.navbar-default .navbar-nav>.active>a:focus {
@@ -556,47 +570,31 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="col-md-3 footer-grid wow fadeInLeft animated" data-wow-delay=".5s">
 					<h4>درباره ما</h4>
 					<ul>
-						<li>
-							تمرکز بر مشتری</li>
-						<li>
-
-							لورم ایپسوم یا طرح‌نما </li>
-						<li>
-
-							لورم ایپسوم یا طرح‌نما </li>
-						<li>عملکردها</li>
-						<li>نوآوری</li>
-						<li>
-							مسئوليت ها</li>
+						<?php if (is_string($footerAbout[0]) and $footerAbout[0] != "") { ?><li><?= $footerAbout[0] ?></li><?php } ?>
+						<?php if (is_string($footerAbout[1]) and $footerAbout[0] != "") { ?><li><?= $footerAbout[1] ?></li><?php } ?>
+						<?php if (is_string($footerAbout[2]) and $footerAbout[0] != "") { ?><li><?= $footerAbout[2] ?></li><?php } ?>
+						<?php if (is_string($footerAbout[3]) and $footerAbout[0] != "") { ?><li><?= $footerAbout[3] ?></li><?php } ?>
+						<?php if (is_string($footerAbout[4]) and $footerAbout[0] != "") { ?><li><?= $footerAbout[4] ?></li><?php } ?>
 					</ul>
 				</div>
 				<div class="col-md-3 footer-grid wow fadeInDownBig animated" data-wow-delay=".5s">
 					<h4>راه حل ها</h4>
 					<ul>
-						<li>
-							مرکز تماس</li>
-						<li>پشتیبانی مشتریان</li>
-						<li>
-
-							لورم ایپسوم یا طرح‌نما </li>
-						<li>طرح‌نما </li>
-						<li>
-							وب سلف سرویس</li>
-						<li>معیارهای عملکرد</li>
+						<?php if (is_string($footerSolution[0]) and $footerSolution[0] != "") { ?><li><?= $footerSolution[0] ?></li><?php } ?>
+						<?php if (is_string($footerSolution[1]) and $footerSolution[0] != "") { ?><li><?= $footerSolution[1] ?></li><?php } ?>
+						<?php if (is_string($footerSolution[2]) and $footerSolution[0] != "") { ?><li><?= $footerSolution[2] ?></li><?php } ?>
+						<?php if (is_string($footerSolution[3]) and $footerSolution[0] != "") { ?><li><?= $footerSolution[3] ?></li><?php } ?>
+						<?php if (is_string($footerSolution[4]) and $footerSolution[0] != "") { ?><li><?= $footerSolution[4] ?></li><?php } ?>
 					</ul>
 				</div>
 				<div class="col-md-3 footer-grid wow fadeInUpBig animated" data-wow-delay=".5s">
 					<h4>کارها</h4>
 					<ul>
-						<li>
-							پشتیبانی مشتریان</li>
-						<li>
-							پشتیبانی پلاتین</li>
-						<li>پشتیبانی طلا</li>
-						<li>آموزش</li>
-						<li>کارگاه های آموزشی</li>
-						<li>
-							آموزش آنلاین</li>
+						<?php if (is_string($footerWork[0]) and $footerWork[0] != "") { ?><li><?= $footerWork[0] ?></li><?php } ?>
+						<?php if (is_string($footerWork[1]) and $footerWork[0] != "") { ?><li><?= $footerWork[1] ?></li><?php } ?>
+						<?php if (is_string($footerWork[2]) and $footerWork[0] != "") { ?><li><?= $footerWork[2] ?></li><?php } ?>
+						<?php if (is_string($footerWork[3]) and $footerWork[0] != "") { ?><li><?= $footerWork[3] ?></li><?php } ?>
+						<?php if (is_string($footerWork[4]) and $footerWork[0] != "") { ?><li><?= $footerWork[4] ?></li><?php } ?>
 					</ul>
 				</div>
 				<div class="col-md-3 footer-grid wow fadeInLeft animated" data-wow-delay=".5s">

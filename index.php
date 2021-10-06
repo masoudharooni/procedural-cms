@@ -32,4 +32,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 
+// get footer data
+$footerAbout = getFooterData('about');
+$footerWork = getFooterData('work');
+$footerSolution = getFooterData('solution');
+
+
 include 'views/tpl-index.php';

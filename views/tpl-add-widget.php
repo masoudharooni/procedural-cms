@@ -7,36 +7,37 @@ if (isset($_GET['add-widget'])) {
     }
 }
 ?>
+
 <section class="panel">
     <header class="panel-heading">
-        افزودن ویجت  جدید
+        افزودن ویجت جدید
     </header>
     <div class="panel-body">
         <form id="addWidgetForm" role="form" action="<?= $_SERVER['PHP_SELF'] ?>" method="POST" enctype="multipart/form-data">
             <div class="form-group">
-                <label for="exampleInputEmail1">عنوان ویجت  را وارد کنید:</label>
+                <label for="exampleInputEmail1">عنوان ویجت را وارد کنید:</label>
                 <input type="text" class="form-control" name="widgetName" placeholder="نام ویجت  . . ." required>
             </div>
 
             <div class="form-group">
-                <label for="exampleInputEmail1">ترتیب نمایش ویجت  را وارد کنید :</label>
+                <label for="exampleInputEmail1">ترتیب نمایش ویجت را وارد کنید :</label>
                 <input type="number" class="form-control" name="widgetSort" placeholder="ترتیب نمایش . . ." required>
             </div>
 
-            
+
             <div>
-                <label for="uploadImage" style="cursor: pointer;width: 100%;padding:20px; border:3px dashed lightgray;text-align:center;font-size:22px;font-weight: bold;">تصویری برای ویجت  خود آپلود کنید
+                <label for="uploadImage" style="cursor: pointer;width: 100%;padding:20px; border:3px dashed lightgray;text-align:center;font-size:22px;font-weight: bold;">تصویری برای ویجت خود آپلود کنید
                     <input type="file" name="file" style="display: none;" id="uploadImage" required>
                 </label>
             </div><br>
 
 
             <div class="form-group">
-                <label for="exampleInputEmail1">توضیحات ویجت  :</label>
+                <label for="exampleInputEmail1">توضیحات ویجت :</label>
                 <textarea type="text" class="form-control ckeditor" rows="8" name="widgetDescription" required style="resize: vertical;">توضیحات ویجت  . . .</textarea>
             </div>
-
-            <button type="submit" name="addWidgetBtn" class="btn btn-info">ثبت ویجت  </button>
+            
+            <button type="submit" name="addWidgetBtn" class="btn btn-info">ثبت ویجت </button>
         </form>
 
     </div>

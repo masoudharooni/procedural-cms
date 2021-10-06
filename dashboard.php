@@ -273,4 +273,43 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 
+// update footer about data
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (isset($_POST['addFooterAboutBtn'])) {
+        if (updateFooterData('about', $_POST)) {
+            header("Location:dashboard.php?p=footer-about&footer-about=1");
+        } else {
+            header("Location:dashboard.php?p=footer-about&footer-about=0");
+        }
+    }
+}
+// get footer about data
+$footerAbout = getFooterData('about');
+
+// update footer work data
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (isset($_POST['addFooterWorkBtn'])) {
+        if (updateFooterData('work', $_POST)) {
+            header("Location:dashboard.php?p=footer-work&footer-work=1");
+        } else {
+            header("Location:dashboard.php?p=footer-work&footer-work=0");
+        }
+    }
+}
+// get footer work data
+$footerWork = getFooterData('work');
+
+// update footer solution data
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (isset($_POST['addFooterSolutionBtn'])) {
+        if (updateFooterData('solution', $_POST)) {
+            header("Location:dashboard.php?p=footer-solution&footer-solution=1");
+        } else {
+            header("Location:dashboard.php?p=footer-solution&footer-solution=0");
+        }
+    }
+}
+// get footer solution data
+$footerSolution = getFooterData('solution');
+
 include ROOT_PATH . 'views/tpl-dashboard.php';
